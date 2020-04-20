@@ -75,8 +75,8 @@ public class Combat {
                 for (Humain spectateur : spectateurs) {
                     l.info(spectateur.getNom() + " encourage son ami !");
                 }
-                l.info(dresseur1.getNom()+" envoie "+poque1.getNom()+" ! Il ressemble à "+poque1.getDescription());
-                l.info(dresseur2.getNom()+" envoie "+poque2.getNom()+" ! Il ressemble à "+poque2.getDescription());
+                l.info(dresseur1.getNom()+" envoie "+poque1.getNom()+" ! Il ressemble à "+poque1.getDescription()+" et est de type "+poque1.getType()+" !");
+                l.info(dresseur2.getNom()+" envoie "+poque2.getNom()+" ! Il ressemble à "+poque2.getDescription()+" et est de type "+poque2.getType()+" !");
                 int i = 0;
                 while (poque1.getAttaques()[i]!=null&&i<=2) {
                     l.info(poque1.getNom() + " utilise " + poque1.getAttaques()[i]);
