@@ -10,20 +10,18 @@ import java.util.ArrayList;
 
 public class Dresseur extends Humain implements Peut_Inviter, Serializable {
     private int nb_victoire,nb_defaite;
-    private ArrayList<Poquaimone> equipe;
+    private ArrayList<Poquaimone> equipe=new ArrayList<>();
 
     public Dresseur(){
         super();
         nb_victoire=0;
         nb_defaite=0;
-        this.equipe=new ArrayList<>();
     }
 
     public Dresseur(String nom, String prenom){
         super(nom, prenom);
         nb_victoire=0;
         nb_defaite=0;
-        this.equipe=new ArrayList<>();
     }
 
     public ArrayList<Poquaimone> getEquipe() {
@@ -51,6 +49,12 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
     }
 
     public void ajouterPoquaimone(int id_poque){
+        if(Poquaidexe.poquaidexe.get(1)==null){
+            Poquaidexe.remplirPoquaidexe();
+        }
+        while(Poquaidexe.poquaidexe.get(id_poque-1).isEvoluable()&&id_poque>1){
+            id_poque--; //permet de prendre le poque de base si l'id d'une évolution est entrée en paramètre
+        }
         Poquaimone p = new Poquaimone(
                 id_poque,Poquaidexe.poquaidexe.get(id_poque).getNom(),Poquaidexe.poquaidexe.get(id_poque).getType(),Poquaidexe.poquaidexe.get(id_poque).getDescription(),
                 Poquaidexe.poquaidexe.get(id_poque).isEvoluable(),Poquaidexe.poquaidexe.get(id_poque).getAttaques(),Poquaidexe.poquaidexe.get(id_poque).getPv(),

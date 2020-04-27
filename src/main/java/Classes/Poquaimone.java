@@ -73,8 +73,7 @@ public class Poquaimone implements Serializable {
     }
 
     public void setPv(int pv) {
-        if(pv>=1) this.pv = pv; //plafond à 1pv
-        else this.pv=1;
+        this.pv = Math.max(pv, 1); //plafond à 1pv
     }
 
     public int getPa() {
@@ -95,12 +94,11 @@ public class Poquaimone implements Serializable {
 
     @Override
     public String toString() {
-        return "Poquaimone{" +
-                ", id_dex=" + id_dex +
-                "nom='" + nom + '\'' +
+        return " id_dex=" + id_dex +
+                " nom='" + nom + '\'' +
                 ", type='" + type + '\'' +
                 ", pv=" + pv +
-                ", pa=" + pa +
-                '}';
+                ", pa=" + pa
+                ;
     }
 }

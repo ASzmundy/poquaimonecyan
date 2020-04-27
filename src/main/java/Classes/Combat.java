@@ -15,13 +15,12 @@ public class Combat {
     private Dresseur dresseur1,dresseur2;
     private Arbitre arbitre;
     private Dresseur vainqueur,perdant;
-    private Set<Humain> spectateurs;
+    private Set<Humain> spectateurs=new HashSet<>();
 
     public Combat(Dresseur dresseur1,Dresseur dresseur2, Arbitre arbitre){
         this.dresseur1=dresseur1;
         this.dresseur2=dresseur2;
         this.arbitre=arbitre;
-        this.spectateurs=new HashSet<>();
         Liste_Combats.ajouterCombat(this);
     }
 
@@ -67,7 +66,7 @@ public class Combat {
     }
 
     public void commencerCombat() throws ExceptionPasDeDresseur, ExceptionPasDArbitre, ExceptionPasDePoque {
-        if(this.dresseur1!=null&&this.dresseur2!=null){
+        if(dresseur1!=null&&this.dresseur2!=null&&this.dresseur1!=this.dresseur2){
             if(arbitre!=null){
                 if(dresseur1.getEquipe().get(0)!=null&&dresseur2.getEquipe().get(0)!=null){
                     Random random = new Random();
@@ -83,14 +82,12 @@ public class Combat {
                     l.info(dresseur2.getNom() + " envoie " + poque2.getNom() + " ! Il ressemble à " + poque2.getDescription() + " et est de type " + poque2.getType() + " !");
                     int i = 0;
                     while (poque1.getAttaques()[i] != null && i <= 2) {
-                        l.info(poque1.getNom() + " utilise " + poque1.getAttaques()[i].getNom_attaque());
-                        l.info(poque1.getAttaques()[i].getCri_attaque());
+                        l.info(poque1.getNom() + " utilise " + poque1.getAttaques()[i].getNom_attaque()+"\n"+poque1.getAttaques()[i].getCri_attaque());
                         i++;
                     }
                     i = 0;
                     while (poque1.getAttaques()[i] != null && i <= 2) {
-                        l.info(poque2.getNom() + " utilise " + poque2.getAttaques()[i].getNom_attaque());
-                        l.info(poque2.getAttaques()[i].getCri_attaque());
+                        l.info(poque2.getNom() + " utilise " + poque2.getAttaques()[i].getNom_attaque()+"\n"+poque2.getAttaques()[i].getCri_attaque());
                         i++;
                     }
                     if (poque1.getPa() > poque2.getPv()) {

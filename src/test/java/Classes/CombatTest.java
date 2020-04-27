@@ -1,6 +1,7 @@
 package Classes;
 
 import Exceptions.*;
+import Statics.Liste_Combats;
 import Statics.Poquaidexe;
 import org.junit.Test;
 
@@ -30,17 +31,13 @@ public class CombatTest {
         d1.ajouterAmi(h1);
         try {
             d1.inviterAmi(h1,c);
-            c.commencerCombat();
+            Liste_Combats.lancerCombat();
         }catch (ExceptionAmiNonTrouve eant){
             l.severe("Ami non trouvé");
         }catch (ExceptionCombatNonTrouve ecnt){
             l.severe("L'ami est invité à un combat inexistant");
-        }catch (ExceptionPasDeDresseur epdd){
-            l.severe("Le combat manque de dresseur");
-        }catch (ExceptionPasDArbitre epda){
-            l.severe("Le combat n'a pas d'arbitre");
-        }catch (ExceptionPasDePoque epdp){
-            l.severe("Un des dresseurs n'a pas de poque");
+        }catch (ExceptionAucunCombatProgramme eacp){
+            l.severe("Aucun combat programmé");
         }
     }
 }
