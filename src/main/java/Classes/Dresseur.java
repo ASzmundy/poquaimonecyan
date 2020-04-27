@@ -5,11 +5,16 @@ import Exceptions.ExceptionCombatNonTrouve;
 import Interfaces.Peut_Inviter;
 import Statics.Poquaidexe;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.Serializable;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Dresseur extends Humain implements Peut_Inviter, Serializable {
-    private int nb_victoire,nb_defaite;
+    private Integer nb_victoire,nb_defaite;
     private ArrayList<Poquaimone> equipe=new ArrayList<>();
 
     public Dresseur(){
@@ -32,11 +37,11 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         this.equipe = equipe;
     }
 
-    public int getNb_defaite() {
+    public Integer getNb_defaite() {
         return nb_defaite;
     }
 
-    public int getNb_victoire() {
+    public Integer getNb_victoire() {
         return nb_victoire;
     }
 
@@ -52,8 +57,10 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         if(Poquaidexe.poquaidexe.get(1)==null){
             Poquaidexe.remplirPoquaidexe();
         }
-        while(Poquaidexe.poquaidexe.get(id_poque-1).isEvoluable()&&id_poque>1){
-            id_poque--; //permet de prendre le poque de base si l'id d'une évolution est entrée en paramètre
+        if(id_poque!=1) {
+            while (Poquaidexe.poquaidexe.get(id_poque - 1).isEvoluable() && id_poque > 1) {
+                id_poque--; //permet de prendre le poque de base si l'id d'une évolution est entrée en paramètre
+            }
         }
         Poquaimone p = new Poquaimone(
                 id_poque,Poquaidexe.poquaidexe.get(id_poque).getNom(),Poquaidexe.poquaidexe.get(id_poque).getType(),Poquaidexe.poquaidexe.get(id_poque).getDescription(),
@@ -65,7 +72,7 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
 
     @Override
     public String toString() {
-        return "Nom : "+this.getNom()+" Prénom : "+this.getPrenom();
+        return "Nom :"+this.getNom()+" Prénom :"+this.getPrenom()+" Nombre de victoires :"+this.getNb_victoire()+"\n";
     }
 
     @Override

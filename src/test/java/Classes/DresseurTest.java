@@ -3,6 +3,8 @@ package Classes;
 import Statics.Poquaidexe;
 import org.junit.Test;
 
+import java.io.File;
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
@@ -31,6 +33,5 @@ public class DresseurTest {
 
     @Test
     public void TestImportPoqueFichier(){
-
     }
 }
