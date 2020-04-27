@@ -7,17 +7,17 @@ import java.util.Set;
 public class Humain implements Serializable {
     private String nom,prenom;
     private int id;
-    protected HashSet<Humain> amis;
+    protected Set<Humain> amis=new HashSet<>();
 
     public Humain(){
         nom="Inconnu";
         prenom="Inconnu";
-        Set<Humain> amis = new HashSet<Humain>();
+        Set<Humain> amis = new HashSet<>();
     }
     public Humain(String nom, String prenom){
         this.nom=nom;
         this.prenom=prenom;
-        Set<Humain> amis = new HashSet<Humain>();
+        Set<Humain> amis = new HashSet<>();
     }
 
     public String getNom() {

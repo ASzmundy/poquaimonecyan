@@ -16,14 +16,14 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         super();
         nb_victoire=0;
         nb_defaite=0;
-        this.equipe=new ArrayList<Poquaimone>();
+        this.equipe=new ArrayList<>();
     }
 
     public Dresseur(String nom, String prenom){
         super(nom, prenom);
         nb_victoire=0;
         nb_defaite=0;
-        this.equipe=new ArrayList<Poquaimone>();
+        this.equipe=new ArrayList<>();
     }
 
     public ArrayList<Poquaimone> getEquipe() {
@@ -48,6 +48,15 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
 
     public void incrementNb_defaite(){
         this.nb_defaite++;
+    }
+
+    public void ajouterPoquaimone(int id_poque){
+        Poquaimone p = new Poquaimone(
+                id_poque,Poquaidexe.poquaidexe.get(id_poque).getNom(),Poquaidexe.poquaidexe.get(id_poque).getType(),Poquaidexe.poquaidexe.get(id_poque).getDescription(),
+                Poquaidexe.poquaidexe.get(id_poque).isEvoluable(),Poquaidexe.poquaidexe.get(id_poque).getAttaques(),Poquaidexe.poquaidexe.get(id_poque).getPv(),
+                Poquaidexe.poquaidexe.get(id_poque).getPa()
+        );
+        this.equipe.add(p);
     }
 
     @Override

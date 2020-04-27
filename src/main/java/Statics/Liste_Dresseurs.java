@@ -10,14 +10,14 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 
 public class Liste_Dresseurs implements Serializable {
-    public static HashSet<Dresseur> liste_dresseurs;
+    public static HashSet<Dresseur> liste_dresseurs = new HashSet<>();
 
     public static void ajouterDresseur(Dresseur a_ajouter){
         liste_dresseurs.add(a_ajouter);
     }
 
     public static void afficherDresseurs(){
-        SortedSet<Dresseur> liste_trie = new TreeSet<Dresseur>(new Comparator<Dresseur>() {
+        SortedSet<Dresseur> liste_trie = new TreeSet<>(new Comparator<>() {
             @Override
             public int compare(Dresseur dresseur, Dresseur t1) {
                 if(dresseur.getNb_victoire()>t1.getNb_victoire()) return 1;
@@ -30,4 +30,5 @@ public class Liste_Dresseurs implements Serializable {
             l.info(dresseur.toString());
         }
     }
+
 }

@@ -6,17 +6,19 @@ import Classes.Dresseur;
 import Exceptions.ExceptionAucunCombatProgramme;
 import Exceptions.ExceptionPasDArbitre;
 import Exceptions.ExceptionPasDeDresseur;
+import Exceptions.ExceptionPasDePoque;
 
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
 public class Liste_Combats implements Serializable {
-    public static Queue<Combat> combats_programmes;
+    public static Queue<Combat> combats_programmes= new ConcurrentLinkedQueue<>();
 
     public static void ajouterCombat(Combat a_ajouter){
-        combats_programmes.add(a_ajouter);
+            combats_programmes.add(a_ajouter);
     }
     public static void combatTermine(){
         combats_programmes.poll();
@@ -39,6 +41,8 @@ public class Liste_Combats implements Serializable {
                 l.severe("Pas d'arbitre dans ce combat !");
             }catch (ExceptionPasDeDresseur epd){
                 l.severe("Pas ou pas assez de dresseur(s) dans ce combat !");
+            }catch (ExceptionPasDePoque epp){
+                l.severe("Un des dresseurs n'a pas de poque");
             }
             combatTermine();
         }else throw new ExceptionAucunCombatProgramme();

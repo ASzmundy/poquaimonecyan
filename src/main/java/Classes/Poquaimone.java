@@ -10,6 +10,13 @@ public class Poquaimone implements Serializable {
     private Attaque[] attaques;
 
     public Poquaimone(){
+        this.id_dex=0;
+        this.type="Erreur";
+        this.nom="Missingniet";
+        this.description="une bouillie de pixels";
+        this.evoluable=false;
+        this.pv=1;
+        this.pa=1;
     }
 
     public Poquaimone(int id_dex,String nom,String type, String description,boolean evoluable,Attaque attaque, int pv, int pa){ //pour un poque de base dans le dex
@@ -41,7 +48,8 @@ public class Poquaimone implements Serializable {
         this.evoluable=evoluable;
         this.pv=pv;
         this.pa=pa;
-        this.attaques = attaques;
+        this.attaques = new Attaque[3];
+        this.attaques = attaques.clone();
     }
 
     public int getId() {

@@ -6,7 +6,7 @@ import Classes.Attaque;
 import java.util.HashMap;
 
 public class Poquaidexe {
-    public static HashMap<Integer, Poquaimone> poquaidexe;
+    public static HashMap<Integer, Poquaimone> poquaidexe = new HashMap<>();
 
     public static void remplirPoquaidexe(){ // à utiliser au début du main
         Attaque temp_att;
