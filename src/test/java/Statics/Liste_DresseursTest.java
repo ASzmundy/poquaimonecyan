@@ -1,8 +1,6 @@
 package Statics;
 
-import Classes.Arbitre;
 import Classes.Dresseur;
-import Classes.Poquaimone;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -35,7 +33,7 @@ public class Liste_DresseursTest {
         d.ajouterPoquaimone(10);
         d.ajouterPoquaimone(14);
         Liste_Dresseurs.ajouterDresseur(d);
-        Liste_Dresseurs.afficherDresseurs();
+        Liste_Dresseurs.afficherDresseursTrie();
     }
 
     @Test
@@ -44,6 +42,5 @@ public class Liste_DresseursTest {
         d.ajouterPoquaimone(4);
         d.ajouterPoquaimone(9);
         d.ajouterPoquaimone(8);
-
     }
 }

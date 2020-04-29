@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class CombatTest {
 
     @Test
-    public void testCombat() {
+    public void testCombat() { //Pour tester la classe combat
         Poquaidexe.remplirPoquaidexe();
         Logger l = Logger.getLogger("log_erreurs");
         Dresseur d1 = new Dresseur("Testman","Test");
@@ -21,7 +21,13 @@ public class CombatTest {
         d2.ajouterPoquaimone(1);
         d2.ajouterPoquaimone(17);
         Arbitre a = new Arbitre("Larbitre","Luc");
-        Combat c = new Combat(d1,d2,a);
+        Combat c = null;
+        try {
+            c = new Combat(d1, d2, a);
+        }catch (ExceptionDresseursIdentiques e){
+            e.printStackTrace();
+        }
+        assertNotNull("Combat inexistant !",c);
         assertNotNull("Le combat doit avoir un dresseur 1",c.getDresseur1());
         assertNotNull("Le combat doit avoir un dresseur 2",c.getDresseur2());
         assertNotNull("Le combat doit avoir un arbitre",c.getArbitre());

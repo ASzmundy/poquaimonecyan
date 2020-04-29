@@ -1,5 +1,6 @@
 package Classes;
 
+import Exceptions.ExceptionDresseursIdentiques;
 import Exceptions.ExceptionPasDArbitre;
 import Exceptions.ExceptionPasDeDresseur;
 import Exceptions.ExceptionPasDePoque;
@@ -17,11 +18,13 @@ public class Combat {
     private Dresseur vainqueur,perdant;
     private Set<Humain> spectateurs=new HashSet<>();
 
-    public Combat(Dresseur dresseur1,Dresseur dresseur2, Arbitre arbitre){
-        this.dresseur1=dresseur1;
-        this.dresseur2=dresseur2;
-        this.arbitre=arbitre;
-        Liste_Combats.ajouterCombat(this);
+    public Combat(Dresseur dresseur1,Dresseur dresseur2, Arbitre arbitre) throws ExceptionDresseursIdentiques {
+        if(dresseur1!=dresseur2) {
+            this.dresseur1=dresseur1;
+            this.dresseur2=dresseur2;
+            this.arbitre=arbitre;
+            Liste_Combats.ajouterCombat(this);
+        }else throw new ExceptionDresseursIdentiques();
     }
 
     public void setDresseur1(Dresseur dresseur1) {
@@ -153,7 +156,6 @@ public class Combat {
                     vainqueur.incrementNb_victoire();
                     perdant.incrementNb_defaite();
                     arbitre.IncrementNb_combat_arbitres();
-                    Liste_Combats.combatTermine();
                 }else throw new ExceptionPasDePoque();
             }else throw new ExceptionPasDArbitre();
         }else throw new ExceptionPasDeDresseur();

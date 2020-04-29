@@ -1,24 +1,18 @@
 package Statics;
 
 import Classes.Dresseur;
-import javafx.collections.transformation.SortedList;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 import java.util.logging.Logger;
 
 public class Liste_Dresseurs {
@@ -28,9 +22,10 @@ public class Liste_Dresseurs {
         liste_dresseurs.add(a_ajouter);
     }
 
-    public static void afficherDresseurs() {
+    public static void afficherDresseursTrie() {
         List<Dresseur> liste_trie = new ArrayList<>(liste_dresseurs);
-        liste_trie.sort(new Comparator<Dresseur>() {
+        String a_afficher="\n";
+        liste_trie.sort(new Comparator<>() {
             @Override
             public int compare(Dresseur dresseur, Dresseur t1) {
                 return dresseur.getNb_victoire().compareTo(t1.getNb_victoire());
@@ -38,8 +33,11 @@ public class Liste_Dresseurs {
         });
         Logger l = Logger.getLogger("Dresseurs_par_victoires");
         for (Dresseur dresseur : liste_trie) {
-            l.info(dresseur.toString());
+            a_afficher=a_afficher+dresseur.toString()+"\n";
         }
+        if(!a_afficher.equals("\n")) {
+            l.info(a_afficher);
+        }else l.warning("Liste vide");
     }
 
     public static void sauvegarderDresseurs() {
@@ -50,8 +48,6 @@ public class Liste_Dresseurs {
 
             oos.writeObject(liste_dresseurs);
             oos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,12 +60,9 @@ public class Liste_Dresseurs {
             ifs = new FileInputStream(input);
             ObjectInputStream ois = new ObjectInputStream(ifs);
 
+
             Liste_Dresseurs.liste_dresseurs = (HashSet<Dresseur>) ois.readObject();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

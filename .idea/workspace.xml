@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Plus de tests + modifications diverses + début d'implémentation des sauvegardes">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Classes/document.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Statics/Liste_CombatsTest.java" afterDir="false" />
+    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Nouvel exception : ExceptionDresseursIdentiques au cas où un dresseur se combat lui même&#10;Automatisation de l'ajout d'un Dresseur dans Liste_Dresseurs lors de l'instanciation&#10;Idem pour Combat&#10;Modifs sur Liste_Combats ( utilisation de poll )&#10;Développment des tests&#10;Amélioration du listage des combats et des dresseurs (un seul INFO)&#10;Correctifs d'exceptions&#10;Simplifications mineures de code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionDresseursIdentiques.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poquaimone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Poquaimone.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Combat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Dresseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Dresseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDArbitre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDArbitre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDeDresseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDeDresseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Statics/Liste_Combats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Statics/Liste_Combats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Statics/Liste_Dresseurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Statics/Liste_Dresseurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Classes/DresseurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Classes/DresseurTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Classes/CombatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Classes/CombatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Statics/Liste_CombatsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Statics/Liste_CombatsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Statics/Liste_DresseursTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Statics/Liste_DresseursTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +39,8 @@
       <list>
         <option value="Interface" />
         <option value="Arquillian JUnit Test Class" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,7 +78,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/A_rendre_1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -98,16 +99,8 @@
       <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\java\A_rendre_1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Liste_DresseursTest.testafficherDresseurs">
-    <configuration name="All in Poquaimone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Poquaimone" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DresseurTest.TestImportPoqueFichier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CombatTest.testCombat">
+    <configuration name="CombatTest.testCombat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
@@ -116,24 +109,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Classes" />
-      <option name="MAIN_CLASS_NAME" value="Classes.DresseurTest" />
-      <option name="METHOD_NAME" value="TestImportPoqueFichier" />
+      <option name="MAIN_CLASS_NAME" value="Classes.CombatTest" />
+      <option name="METHOD_NAME" value="testCombat" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DresseurTest.testAjoutPoque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Liste_CombatsTest.testListeCombat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Classes.*" />
+          <option name="PATTERN" value="Statics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Classes" />
-      <option name="MAIN_CLASS_NAME" value="Classes.DresseurTest" />
-      <option name="METHOD_NAME" value="testAjoutPoque" />
+      <option name="PACKAGE_NAME" value="Statics" />
+      <option name="MAIN_CLASS_NAME" value="Statics.Liste_CombatsTest" />
+      <option name="METHOD_NAME" value="testListeCombat" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Liste_CombatsTest.testajouterCombat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Poquaimone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Statics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Statics" />
+      <option name="MAIN_CLASS_NAME" value="Statics.Liste_CombatsTest" />
+      <option name="METHOD_NAME" value="testajouterCombat" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CombatTest.testCombat" />
         <item itemvalue="JUnit.Liste_DresseursTest.testafficherDresseurs" />
+        <item itemvalue="JUnit.Liste_CombatsTest.testListeCombat" />
+        <item itemvalue="JUnit.Liste_CombatsTest.testajouterCombat" />
         <item itemvalue="JUnit.Liste_DresseursTest.testajouterDresseur" />
-        <item itemvalue="JUnit.DresseurTest.TestImportPoqueFichier" />
-        <item itemvalue="JUnit.DresseurTest.testAjoutPoque" />
-        <item itemvalue="JUnit.All in Poquaimone" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +222,8 @@
       <workItem from="1587020319508" duration="13206000" />
       <workItem from="1587383459129" duration="3915000" />
       <workItem from="1587970907178" duration="12995000" />
-      <workItem from="1587992569453" duration="10671000" />
+      <workItem from="1587992569453" duration="10700000" />
+      <workItem from="1588155625223" duration="8364000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de tests + Correctifs + ajouts divers">
       <created>1587979317549</created>
@@ -229,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587983964477</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Plus de tests + modifications diverses + début d'implémentation des sauvegardes + ajout d'un persistence.xml vide">
+      <created>1588003287535</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588003287535</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +279,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Ajout de tests + Correctifs + ajouts divers" />
     <MESSAGE value="Plus de tests + modifications diverses + début d'implémentation des sauvegardes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plus de tests + modifications diverses + début d'implémentation des sauvegardes" />
+    <MESSAGE value="Plus de tests + modifications diverses + début d'implémentation des sauvegardes + ajout d'un persistence.xml vide" />
+    <option name="LAST_COMMIT_MESSAGE" value="Plus de tests + modifications diverses + début d'implémentation des sauvegardes + ajout d'un persistence.xml vide" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="199" key="#Project_Structure" timestamp="1585501545091">
@@ -277,46 +295,50 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="628" y="466" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586161194446" />
-    <state x="585" y="135" key="CommitChangelistDialog2" timestamp="1588003231330">
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588163890415">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="135" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588003231330" />
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588163890415" />
+    <state x="586" y="60" key="CommitChangelistDialog2" timestamp="1588167863052">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="586" y="60" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588167863052" />
     <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1586161207277">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="282" key="FileChooserDialogImpl/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586161207277" />
-    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1588003231395">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1588167925415">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588003231395" />
-    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1588003231395">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588167925415" />
+    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1588167925415">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588003231395" />
-    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1588003231394">
+    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588167925415" />
+    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1588167925415">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588003231394" />
-    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1588003231395">
+    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588167925415" />
+    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1588167925415">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588003231395" />
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1587998960945">
+    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588167925415" />
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1588162678249">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1587998960945" />
-    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1587998960945">
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588162678249" />
+    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1588162678249">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1587998960945" />
-    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1587998960945">
+    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588162678249" />
+    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1588162678249">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1587998960945" />
-    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1587998960945">
+    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588162678249" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1588162678249">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1587998960945" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588162678249" />
     <state x="490" y="195" key="Maven.ArtifactSearchDialog" timestamp="1586159718762">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

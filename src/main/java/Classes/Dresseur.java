@@ -3,14 +3,11 @@ package Classes;
 import Exceptions.ExceptionAmiNonTrouve;
 import Exceptions.ExceptionCombatNonTrouve;
 import Interfaces.Peut_Inviter;
+import Statics.Liste_Dresseurs;
 import Statics.Poquaidexe;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.io.Serializable;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Dresseur extends Humain implements Peut_Inviter, Serializable {
@@ -21,12 +18,14 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         super();
         nb_victoire=0;
         nb_defaite=0;
+        Liste_Dresseurs.ajouterDresseur(this);
     }
 
     public Dresseur(String nom, String prenom){
         super(nom, prenom);
         nb_victoire=0;
         nb_defaite=0;
+        Liste_Dresseurs.ajouterDresseur(this);
     }
 
     public ArrayList<Poquaimone> getEquipe() {
@@ -58,7 +57,7 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
             Poquaidexe.remplirPoquaidexe();
         }
         if(id_poque!=1) {
-            while (Poquaidexe.poquaidexe.get(id_poque - 1).isEvoluable() && id_poque > 1) {
+            while (Poquaidexe.poquaidexe.get(id_poque - 1).isEvoluable() && id_poque > 2) {
                 id_poque--; //permet de prendre le poque de base si l'id d'une évolution est entrée en paramètre
             }
         }
