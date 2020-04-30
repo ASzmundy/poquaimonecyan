@@ -1,10 +1,9 @@
-package Classes;
+package implems;
 
-import Statics.Poquaidexe;
+import implems.humains.Dresseur;
+import implems.uniques.Poquaidexe;
 import org.junit.Test;
 
-import java.io.File;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
@@ -21,17 +20,16 @@ public class DresseurTest {
     @Test
     public void testAjoutPoque() {
         Dresseur d = new Dresseur();
-        d.ajouterPoquaimone(20);
+        Poquaidexe p = new Poquaidexe();
+        d.ajouterPoquaimone(20,p);
         Logger l = Logger.getLogger("Log_test");
         assertNotNull(d.getEquipe().get(0));
-        assertFalse("Le poquaimone ne doit pas être une evolution",Poquaidexe.poquaidexe.get(d.getEquipe().get(0).getId()-1).isEvoluable());
+        assertFalse("Le poquaimone ne doit pas être une evolution", p.poquaidexe.get(d.getEquipe().get(0).getId()-1).isEvoluable());
         l.info(d.getEquipe().get(0).toString());
-        d.ajouterPoquaimone(16);
-        assertFalse("Le poquaimone ne doit pas être une evolution",Poquaidexe.poquaidexe.get(d.getEquipe().get(1).getId()-1).isEvoluable());
+        d.ajouterPoquaimone(16,p);
+        assertFalse("Le poquaimone ne doit pas être une evolution", p.poquaidexe.get(d.getEquipe().get(1).getId()-1).isEvoluable());
         l.info(d.getEquipe().get(1).toString());
     }
 
-    @Test
-    public void TestImportPoqueFichier(){
-    }
+
 }

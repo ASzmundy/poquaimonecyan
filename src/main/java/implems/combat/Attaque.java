@@ -1,4 +1,4 @@
-package Classes;
+package implems.combat;
 
 import java.io.Serializable;
 

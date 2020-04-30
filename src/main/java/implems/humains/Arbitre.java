@@ -1,8 +1,9 @@
-package Classes;
+package implems.humains;
 
-import Exceptions.ExceptionAmiNonTrouve;
-import Exceptions.ExceptionCombatNonTrouve;
-import Interfaces.Peut_Inviter;
+import exceptions.humains.ExceptionAmiNonTrouve;
+import exceptions.combat.ExceptionCombatNonTrouve;
+import implems.combat.Combat;
+import interfaces.combat.Peut_Inviter;
 
 public class Arbitre extends Humain implements Peut_Inviter {
     private int nb_combats_arbitres;

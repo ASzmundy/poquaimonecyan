@@ -1,8 +1,16 @@
-package Classes;
+package implems;
 
-import Exceptions.*;
-import Statics.Liste_Combats;
-import Statics.Poquaidexe;
+import exceptions.humains.ExceptionAmiNonTrouve;
+import exceptions.combat.ExceptionAucunCombatProgramme;
+import exceptions.combat.ExceptionCombatNonTrouve;
+import exceptions.combat.ExceptionDresseursIdentiques;
+import implems.combat.Combat;
+import implems.humains.Arbitre;
+import implems.humains.Dresseur;
+import implems.humains.Humain;
+import implems.uniques.Liste_Combats;
+import implems.uniques.Liste_Dresseurs;
+import implems.uniques.Poquaidexe;
 import org.junit.Test;
 
 import java.util.logging.Logger;
@@ -13,17 +21,19 @@ public class CombatTest {
 
     @Test
     public void testCombat() { //Pour tester la classe combat
-        Poquaidexe.remplirPoquaidexe();
+        Poquaidexe p = new Poquaidexe();
+        Liste_Dresseurs ld = new Liste_Dresseurs();
         Logger l = Logger.getLogger("log_erreurs");
-        Dresseur d1 = new Dresseur("Testman","Test");
-        d1.ajouterPoquaimone(4);
+        Dresseur d1 = new Dresseur("Testman","Test",ld);
+        d1.ajouterPoquaimone(4,p);
         Dresseur d2 = new Dresseur();
-        d2.ajouterPoquaimone(1);
-        d2.ajouterPoquaimone(17);
+        d2.ajouterPoquaimone(1,p);
+        d2.ajouterPoquaimone(17,p);
         Arbitre a = new Arbitre("Larbitre","Luc");
         Combat c = null;
+        Liste_Combats lc = new Liste_Combats();
         try {
-            c = new Combat(d1, d2, a);
+            c = new Combat(d1, d2, a,lc);
         }catch (ExceptionDresseursIdentiques e){
             e.printStackTrace();
         }
@@ -37,7 +47,7 @@ public class CombatTest {
         d1.ajouterAmi(h1);
         try {
             d1.inviterAmi(h1,c);
-            Liste_Combats.lancerCombat();
+            lc.lancerCombat();
         }catch (ExceptionAmiNonTrouve eant){
             l.severe("Ami non trouvé");
         }catch (ExceptionCombatNonTrouve ecnt){

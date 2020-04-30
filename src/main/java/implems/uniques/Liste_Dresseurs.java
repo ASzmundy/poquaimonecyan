@@ -1,6 +1,6 @@
-package Statics;
+package implems.uniques;
 
-import Classes.Dresseur;
+import implems.humains.Dresseur;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,13 +16,17 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 public class Liste_Dresseurs {
-    public static Set<Dresseur> liste_dresseurs = new HashSet<>();
+    public Set<Dresseur> liste_dresseurs;
 
-    public static void ajouterDresseur(Dresseur a_ajouter) {
+    public Liste_Dresseurs(){
+        liste_dresseurs = new HashSet<>();
+    }
+
+    public void ajouterDresseur(Dresseur a_ajouter) {
         liste_dresseurs.add(a_ajouter);
     }
 
-    public static void afficherDresseursTrie() {
+    public void afficherDresseursTrie() {
         List<Dresseur> liste_trie = new ArrayList<>(liste_dresseurs);
         String a_afficher="\n";
         liste_trie.sort(new Comparator<>() {
@@ -40,8 +44,8 @@ public class Liste_Dresseurs {
         }else l.warning("Liste vide");
     }
 
-    public static void sauvegarderDresseurs() {
-        File output = new File("dresseurs.sav");
+    public void sauvegarderDresseurs() {
+        File output = new File("dresseurs.dsf");//.dsf = Dresseur Save File
         try {
             FileOutputStream ofs = new FileOutputStream(output);
             ObjectOutputStream oos = new ObjectOutputStream(ofs);
@@ -53,17 +57,19 @@ public class Liste_Dresseurs {
         }
     }
 
-    public static void chargerDresseurs() {
-        File input = new File("dresseurs.sav");
+    public void chargerDresseurs() {
+        File input = new File("dresseurs.dsf");
         FileInputStream ifs;
         try {
             ifs = new FileInputStream(input);
             ObjectInputStream ois = new ObjectInputStream(ifs);
 
-
-            Liste_Dresseurs.liste_dresseurs = (HashSet<Dresseur>) ois.readObject();
+            liste_dresseurs = (HashSet<Dresseur>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
+
+
+
 }

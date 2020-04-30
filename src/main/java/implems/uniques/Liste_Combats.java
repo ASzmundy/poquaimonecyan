@@ -1,13 +1,13 @@
-package Statics;
+package implems.uniques;
 
-import Classes.Arbitre;
-import Classes.Combat;
-import Classes.Dresseur;
-import Exceptions.ExceptionAucunCombatProgramme;
-import Exceptions.ExceptionDresseursIdentiques;
-import Exceptions.ExceptionPasDArbitre;
-import Exceptions.ExceptionPasDeDresseur;
-import Exceptions.ExceptionPasDePoque;
+import exceptions.combat.ExceptionAucunCombatProgramme;
+import exceptions.combat.ExceptionDresseursIdentiques;
+import exceptions.combat.ExceptionPasDArbitre;
+import exceptions.combat.ExceptionPasDeDresseur;
+import exceptions.combat.ExceptionPasDePoque;
+import implems.combat.Combat;
+import implems.humains.Arbitre;
+import implems.humains.Dresseur;
 
 import java.io.Serializable;
 import java.util.Iterator;
@@ -15,24 +15,28 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Logger;
 
-public class Liste_Combats implements Serializable {
-    public static Queue<Combat> combats_programmes= new ConcurrentLinkedQueue<>();
+public class Liste_Combats implements Serializable{
+    public Queue<Combat> combats_programmes;
 
-    public static void ajouterCombat(Combat a_ajouter){
+    public Liste_Combats(){
+        combats_programmes = new ConcurrentLinkedQueue<>();
+    }
+
+    public void ajouterCombat(Combat a_ajouter){
             combats_programmes.add(a_ajouter);
     }
 
-    public static String afficherListe(){
+    public String afficherListe(){
         return combats_programmes.toString();
     }
 
-    public static void organiserCombat(Dresseur dresseur1, Dresseur dresseur2, Arbitre arbitre) throws ExceptionDresseursIdentiques{
+    public void organiserCombat(Dresseur dresseur1, Dresseur dresseur2, Arbitre arbitre) throws ExceptionDresseursIdentiques{
         if(dresseur1!=dresseur2) {
-            Combat nouveau_combat = new Combat(dresseur1, dresseur2, arbitre);
+            Combat nouveau_combat = new Combat(dresseur1, dresseur2, arbitre, this);
         }else throw new ExceptionDresseursIdentiques();
     }
 
-    public static void lancerCombat() throws ExceptionAucunCombatProgramme{
+    public void lancerCombat() throws ExceptionAucunCombatProgramme{
         Logger l = Logger.getLogger("Log_Lancercombat");
         if(combats_programmes.peek()!=null){
             try {
@@ -47,7 +51,7 @@ public class Liste_Combats implements Serializable {
         }else throw new ExceptionAucunCombatProgramme();
     }
 
-    public static void listerCombatDresseur(Dresseur dresseur){
+    public void listerCombatDresseur(Dresseur dresseur){
         Iterator<Combat> i=combats_programmes.iterator();
         Logger l = Logger.getLogger("Log_ListeCombatDresseur");
         while (i.hasNext()) {

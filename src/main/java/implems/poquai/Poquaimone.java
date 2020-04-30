@@ -1,13 +1,16 @@
-package Classes;
+package implems.poquai;
+
+import implems.combat.Attaque;
+import implems.uniques.Poquaidexe;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 public class Poquaimone implements Serializable {
     private String nom,type,description;
     private boolean evoluable;
     private int pv,pa,id_dex;
     private Attaque[] attaques;
+    private Poquaidexe poquaidexe;
 
     public Poquaimone(){
         this.id_dex=0;
@@ -40,7 +43,7 @@ public class Poquaimone implements Serializable {
         this.attaques=new Attaque[3];
         this.attaques[0] = attaque;
     }
-    public Poquaimone(int id_dex,String nom,String type, String description,boolean evoluable,Attaque[] attaques, int pv, int pa){ //pour instancier un poque
+    public Poquaimone(int id_dex,String nom,String type, String description,boolean evoluable,Attaque[] attaques, int pv, int pa, Poquaidexe px){ //pour instancier un poque
         this.id_dex=id_dex;
         this.type=type;
         this.nom=nom;
@@ -50,6 +53,7 @@ public class Poquaimone implements Serializable {
         this.pa=pa;
         this.attaques = new Attaque[3];
         this.attaques = attaques.clone();
+        this.poquaidexe=px;
     }
 
     public int getId() {
@@ -90,6 +94,10 @@ public class Poquaimone implements Serializable {
 
     public Attaque[] getAttaques() {
         return attaques;
+    }
+
+    public Poquaidexe getPoquaidexe() {
+        return poquaidexe;
     }
 
     @Override

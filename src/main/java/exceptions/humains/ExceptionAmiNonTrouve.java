@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions.humains;
 
 public class ExceptionAmiNonTrouve extends Exception {
 }

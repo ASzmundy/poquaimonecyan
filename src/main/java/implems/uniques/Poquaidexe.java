@@ -1,14 +1,15 @@
-package Statics;
+package implems.uniques;
 
-import Classes.Poquaimone;
-import Classes.Attaque;
+import implems.poquai.Poquaimone;
+import implems.combat.Attaque;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Poquaidexe {
-    public static HashMap<Integer, Poquaimone> poquaidexe = new HashMap<>();
+public class Poquaidexe implements Serializable {
+    public HashMap<Integer, Poquaimone> poquaidexe = new HashMap<>();
 
-    public static void remplirPoquaidexe(){ // à utiliser au début du main
+    public Poquaidexe(){
         Attaque temp_att;
         temp_att = new Attaque("Petit pincement","heeeeh");
         poquaidexe.put(1,new Poquaimone(1,"Tortitire","Eau","une petite tortue trop mimi",true,

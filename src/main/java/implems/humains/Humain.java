@@ -1,4 +1,4 @@
-package Classes;
+package implems.humains;
 
 import java.io.Serializable;
 import java.util.HashSet;

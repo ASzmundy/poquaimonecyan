@@ -1,11 +1,15 @@
-package Classes;
+package implems.combat;
 
-import Exceptions.ExceptionDresseursIdentiques;
-import Exceptions.ExceptionPasDArbitre;
-import Exceptions.ExceptionPasDeDresseur;
-import Exceptions.ExceptionPasDePoque;
-import Statics.Liste_Combats;
-import Statics.Poquaidexe;
+import exceptions.combat.ExceptionDresseursIdentiques;
+import exceptions.combat.ExceptionPasDArbitre;
+import exceptions.combat.ExceptionPasDeDresseur;
+import exceptions.combat.ExceptionPasDePoque;
+import implems.humains.Dresseur;
+import implems.humains.Humain;
+import implems.uniques.Liste_Combats;
+import implems.uniques.Poquaidexe;
+import implems.poquai.Poquaimone;
+import implems.humains.Arbitre;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -18,12 +22,12 @@ public class Combat {
     private Dresseur vainqueur,perdant;
     private Set<Humain> spectateurs=new HashSet<>();
 
-    public Combat(Dresseur dresseur1,Dresseur dresseur2, Arbitre arbitre) throws ExceptionDresseursIdentiques {
+    public Combat(Dresseur dresseur1,Dresseur dresseur2, Arbitre arbitre, Liste_Combats lc) throws ExceptionDresseursIdentiques {
         if(dresseur1!=dresseur2) {
             this.dresseur1=dresseur1;
             this.dresseur2=dresseur2;
             this.arbitre=arbitre;
-            Liste_Combats.ajouterCombat(this);
+            lc.ajouterCombat(this);
         }else throw new ExceptionDresseursIdentiques();
     }
 
@@ -85,12 +89,12 @@ public class Combat {
                     l.info(dresseur2.getNom() + " envoie " + poque2.getNom() + " ! Il ressemble à " + poque2.getDescription() + " et est de type " + poque2.getType() + " !");
                     int i = 0;
                     while (poque1.getAttaques()[i] != null && i <= 2) {
-                        l.info(poque1.getNom() + " utilise " + poque1.getAttaques()[i].getNom_attaque()+"\n"+poque1.getAttaques()[i].getCri_attaque());
+                        l.info(poque1.getNom() + " utilise " + poque1.getAttaques()[i].getNom_attaque()+"\n\t"+poque1.getAttaques()[i].getCri_attaque());
                         i++;
                     }
                     i = 0;
                     while (poque1.getAttaques()[i] != null && i <= 2) {
-                        l.info(poque2.getNom() + " utilise " + poque2.getAttaques()[i].getNom_attaque()+"\n"+poque2.getAttaques()[i].getCri_attaque());
+                        l.info(poque2.getNom() + " utilise " + poque2.getAttaques()[i].getNom_attaque()+"\n\t"+poque2.getAttaques()[i].getCri_attaque());
                         i++;
                     }
                     if (poque1.getPa() > poque2.getPv()) {
@@ -134,24 +138,12 @@ public class Combat {
                         l.info("Le vainqueur est " + vainqueur.getNom() + " avec " + poque1.getNom() + " !");
                         poque1.setPv(poque1.getPv() + 3);
                         poque2.setPv(poque2.getPv() - 3);
-                        if (poque1.isEvoluable()) {
-                            if (Poquaidexe.poquaidexe.get(poque1.getId() + 1).isEvoluable()) {
-                                if (poque1.getPv() >= 50) vainqueur.evoluer(num_poque1);
-                            } else {
-                                if (poque1.getPv() >= 100) vainqueur.evoluer(num_poque1);
-                            }
-                        }
+                        vainqueur.evoluer(num_poque1);
                     } else {
                         l.info("Le vainqueur est " + vainqueur.getNom() + " avec " + poque2.getNom() + " !");
                         poque2.setPv(poque2.getPv() + 3);
                         poque1.setPv(poque1.getPv() - 3);
-                        if (poque2.isEvoluable()) {
-                            if (Poquaidexe.poquaidexe.get(poque2.getId() + 1).isEvoluable()) {
-                                if (poque2.getPv() >= 50) vainqueur.evoluer(num_poque2);
-                            } else {
-                                if (poque2.getPv() >= 100) vainqueur.evoluer(num_poque2);
-                            }
-                        }
+                        vainqueur.evoluer(num_poque2);
                     }
                     vainqueur.incrementNb_victoire();
                     perdant.incrementNb_defaite();
