@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 
-public class Liste_Dresseurs {
+public class Liste_Dresseurs implements Serializable {
     public Set<Dresseur> liste_dresseurs;
 
     public Liste_Dresseurs(){
@@ -44,30 +45,12 @@ public class Liste_Dresseurs {
         }else l.warning("Liste vide");
     }
 
-    public void sauvegarderDresseurs() {
-        File output = new File("dresseurs.dsf");//.dsf = Dresseur Save File
-        try {
-            FileOutputStream ofs = new FileOutputStream(output);
-            ObjectOutputStream oos = new ObjectOutputStream(ofs);
+    public void sauvegarderDresseursJSON() {
 
-            oos.writeObject(liste_dresseurs);
-            oos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
-    public void chargerDresseurs() {
-        File input = new File("dresseurs.dsf");
-        FileInputStream ifs;
-        try {
-            ifs = new FileInputStream(input);
-            ObjectInputStream ois = new ObjectInputStream(ifs);
+    public void chargerDresseursJSON() {
 
-            liste_dresseurs = (HashSet<Dresseur>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
 

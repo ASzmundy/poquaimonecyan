@@ -1,4 +1,4 @@
-package implems;
+package implems.uniques;
 
 import implems.uniques.Poquaidexe;
 import org.junit.Test;

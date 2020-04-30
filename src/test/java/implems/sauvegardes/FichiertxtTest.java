@@ -1,4 +1,4 @@
-package implems;
+package implems.sauvegardes;
 
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Dresseur;

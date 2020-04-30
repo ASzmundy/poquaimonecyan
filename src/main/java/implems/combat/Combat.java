@@ -10,12 +10,13 @@ import implems.uniques.Liste_Combats;
 import implems.poquai.Poquaimone;
 import implems.humains.Arbitre;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 import java.util.logging.Logger;
 
-public class Combat {
+public class Combat implements Serializable {
     private Dresseur dresseur1,dresseur2;
     private Arbitre arbitre;
     private Set<Humain> spectateurs=new HashSet<>();

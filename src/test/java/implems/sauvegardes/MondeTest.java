@@ -1,4 +1,4 @@
-package implems;
+package implems.sauvegardes;
 
 import exceptions.combat.ExceptionAucunCombatProgramme;
 import exceptions.combat.ExceptionDresseursIdentiques;
@@ -12,12 +12,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Liste_CombatsTest {
-
-
+public class MondeTest {
 
     @Test
-    public void testListeCombat() { //test des méthodes de Liste_Combat
+    public void sauvegarderMonde() {
         Liste_Dresseurs ld = new Liste_Dresseurs();
         Dresseur d1=new Dresseur("Testman","Georges",ld);
         Dresseur d2=new Dresseur("Testwoman","Helena",ld);
@@ -34,9 +32,11 @@ public class Liste_CombatsTest {
 
             d3.ajouterPoquaimone(8, p);
             d3.ajouterPoquaimone(18, p);
-        }catch (ExceptionPoquaiIntrouvable e){
+        }
+        catch (ExceptionPoquaiIntrouvable e){
             e.printStackTrace();
         }
+        ld.afficherDresseursTrie();
         Arbitre a =new Arbitre("Larbitre","Stéphane");
         Liste_Combats lc = new Liste_Combats();
         try {
@@ -48,13 +48,18 @@ public class Liste_CombatsTest {
         }catch (ExceptionDresseursIdentiques e){
             e.printStackTrace();
         }
-        lc.listerCombatDresseur(d1);
-        try {
-            lc.lancerCombat();
-            lc.listerCombatDresseur(d1);
-        }catch (ExceptionAucunCombatProgramme e){
-            e.printStackTrace();
+        Monde m = new Monde(lc,ld,p);
+        m.sauvegarderMonde("mondetest");
         }
-    }
 
+
+    @Test
+    public void chargerMonde() {
+        Monde m=Monde.chargerMonde("mondetest");
+        assertNotNull("Monde chargé incorrectement",m);
+        assertNotNull("Liste combat chargé incorrectement",m.liste_combats);
+        assertNotNull("Liste dresseurs chargé incorrectement",m.liste_dresseurs);
+        m.liste_dresseurs.afficherDresseursTrie();
+        m.liste_combats.afficherListe();
+    }
 }

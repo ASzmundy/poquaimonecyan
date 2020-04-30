@@ -64,7 +64,7 @@ public class Liste_Combats implements Serializable{
         while (i.hasNext()) {
             Combat suivant=i.next();
             if(suivant.getDresseur1()==dresseur||suivant.getDresseur2()==dresseur) {
-                l.info(suivant.toString());
+                l.info(suivant.nomCombat());
             }
         }
     }

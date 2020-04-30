@@ -1,4 +1,4 @@
-package implems;
+package implems.uniques;
 
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Dresseur;
@@ -53,28 +53,11 @@ public class Liste_DresseursTest {
 
     @Test
     public void TestSauvegarde() {
-        Liste_Dresseurs ld = new Liste_Dresseurs();
-        Poquaidexe p = new Poquaidexe();
-        Dresseur d = new Dresseur("Kensington", "Charles",ld);
-        assertNotNull(p.poquaidexe);
-        assertNotNull(d);
-        try {
-            d.ajouterPoquaimone(1, p);
-            d.ajouterPoquaimone(17, p);
-            assertNotNull("le dresseur doit avoir des poquaimones",d.getEquipe().get(0));
-            assertNotNull("le dresseur doit avoir des poquaimones",d.getEquipe().get(1));
-        }catch (ExceptionPoquaiIntrouvable e){
-            e.printStackTrace();
-        }
-        ld.afficherDresseursTrie();
-        ld.sauvegarderDresseurs();
+
     }
 
     @Test
     public void TestChargement(){
-        Liste_Dresseurs ld = new Liste_Dresseurs();
-        ld.chargerDresseurs();
-        assertNotNull("Échec du chargement : Liste_Dresseurs = null !",ld.liste_dresseurs);
-        ld.afficherDresseursTrie();
+
     }
 }
