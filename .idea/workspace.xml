@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Implémentation de la sauvegarde du Monde dans fichier&#10;Test de la sauvegarde&#10;Packages des tests">
-      <change afterPath="$PROJECT_DIR$/mondetest.wsf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/implems/sauvegardes/Monde.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/implems/sauvegardes/MondeTest.java" afterDir="false" />
+    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Version InDev 1&#10;Implémentation des sauvegardes&#10;Manque : Les sauvegardes JSON et JPU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Combats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Combats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dresseurs.dsf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Dresseurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Dresseurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/FichiertxtTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/sauvegardes/FichiertxtTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/Liste_CombatsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/uniques/Liste_CombatsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/Liste_DresseursTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/uniques/Liste_DresseursTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/PoquaidexeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/uniques/PoquaidexeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/document.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/implems/sauvegardes/MondeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/sauvegardes/MondeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +30,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Arquillian JUnit Test Class" />
+        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -51,6 +43,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -86,23 +79,20 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="implems.sauvegardes" />
       <recent name="Statics" />
       <recent name="Classes" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="implems.sauvegardes" />
-      <recent name="implems.uniques" />
-      <recent name="classes" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\resources\META-INF" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\java\A_rendre_1" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="classes" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\resources\META-INF" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\java\A_rendre_1" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.MondeTest.chargerMonde">
@@ -110,12 +100,12 @@
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="implems.uniques.*" />
+          <option name="PATTERN" value="implems.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="implems.sauvegardes" />
-      <option name="MAIN_CLASS_NAME" value="implems.sauvegardes.FichiertxtTest" />
+      <option name="PACKAGE_NAME" value="implems" />
+      <option name="MAIN_CLASS_NAME" value="implems.FichiertxtTest" />
       <option name="METHOD_NAME" value="LecturePoquaimoneTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -126,12 +116,12 @@
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="implems.uniques.*" />
+          <option name="PATTERN" value="implems.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="implems.uniques" />
-      <option name="MAIN_CLASS_NAME" value="implems.uniques.Liste_DresseursTest" />
+      <option name="PACKAGE_NAME" value="implems" />
+      <option name="MAIN_CLASS_NAME" value="implems.Liste_DresseursTest" />
       <option name="METHOD_NAME" value="TestChargement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -174,7 +164,7 @@
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="implems.uniques.*" />
+          <option name="PATTERN" value="implems.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -228,7 +218,7 @@
       <workItem from="1587970907178" duration="12995000" />
       <workItem from="1587992569453" duration="10700000" />
       <workItem from="1588155625223" duration="11339000" />
-      <workItem from="1588239653251" duration="22300000" />
+      <workItem from="1588239653251" duration="17800000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de tests + Correctifs + ajouts divers">
       <created>1587979317549</created>
@@ -265,14 +255,7 @@
       <option name="project" value="LOCAL" />
       <updated>1588248087228</updated>
     </task>
-    <task id="LOCAL-00006" summary="Amélioration de l'affichage de Liste_Dresseurs&#10;Suppression des tests redondants&#10;Nouvelle Exception pour la classe Poquaimone: ExceptionPoquaiIntrouvable&#10;Modifications pour intégrer la nouvelle exception&#10;Ajout du test de sauvegarde en fichier texte&#10;Ajout d'asserts&#10;Quelques peaufinages">
-      <created>1588259880580</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1588259880580</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,9 +291,7 @@
     <MESSAGE value="Plus de tests + modifications diverses + début d'implémentation des sauvegardes + ajout d'un persistence.xml vide" />
     <MESSAGE value="Nouvel exception : ExceptionDresseursIdentiques au cas où un dresseur se combat lui même&#10;Automatisation de l'ajout d'un Dresseur dans Liste_Dresseurs lors de l'instanciation&#10;Idem pour Combat&#10;Modifs sur Liste_Combats ( utilisation de poll )&#10;Développment des tests&#10;Amélioration du listage des combats et des dresseurs (un seul INFO)&#10;Correctifs d'exceptions&#10;Simplifications mineures de code" />
     <MESSAGE value="Modification des packages&#10;Retrait des statics, listes instanciables&#10;Conditions d'évolution déplacées dans evoluer()&#10;Test de la sauvegarde des dresseurs&#10;Et toutes les corrections qui en suit" />
-    <MESSAGE value="Amélioration de l'affichage de Liste_Dresseurs&#10;Suppression des tests redondants&#10;Nouvelle Exception pour la classe Poquaimone: ExceptionPoquaiIntrouvable&#10;Modifications pour intégrer la nouvelle exception&#10;Ajout du test de sauvegarde en fichier texte&#10;Ajout d'asserts&#10;Quelques peaufinages" />
-    <MESSAGE value="Implémentation de la sauvegarde du Monde dans fichier&#10;Test de la sauvegarde&#10;Packages des tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implémentation de la sauvegarde du Monde dans fichier&#10;Test de la sauvegarde&#10;Packages des tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification des packages&#10;Retrait des statics, listes instanciables&#10;Conditions d'évolution déplacées dans evoluer()&#10;Test de la sauvegarde des dresseurs&#10;Et toutes les corrections qui en suit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="199" key="#Project_Structure" timestamp="1585501545091">
@@ -325,10 +306,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="628" y="466" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586161194446" />
-    <state x="756" y="400" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588263151419">
+    <state x="756" y="400" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588239949974">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="756" y="400" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588263151419" />
+    <state x="756" y="400" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588239949974" />
     <state x="673" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588243124955">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -337,30 +318,34 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588163890415" />
-    <state x="586" y="60" width="997" height="949" key="CommitChangelistDialog2" timestamp="1588263346265">
+    <state x="586" y="60" width="997" height="949" key="CommitChangelistDialog2" timestamp="1588265620722">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="586" y="60" width="997" height="949" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588263346265" />
+    <state x="586" y="60" width="997" height="949" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588265620722" />
+    <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1588264981911">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="92" y="92" width="1736" height="896" key="DiffContextDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264981911" />
     <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1586161207277">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="282" key="FileChooserDialogImpl/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586161207277" />
-    <state width="1877" height="424" key="GridCell.Tab.0.bottom" timestamp="1588264211584">
+    <state width="1877" height="360" key="GridCell.Tab.0.bottom" timestamp="1588265620740">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="424" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264211584" />
-    <state width="1877" height="424" key="GridCell.Tab.0.center" timestamp="1588264211584">
+    <state width="1877" height="360" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588265620740" />
+    <state width="1877" height="360" key="GridCell.Tab.0.center" timestamp="1588265620740">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="424" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264211584" />
-    <state width="1877" height="424" key="GridCell.Tab.0.left" timestamp="1588264211583">
+    <state width="1877" height="360" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588265620740" />
+    <state width="1877" height="360" key="GridCell.Tab.0.left" timestamp="1588265620740">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="424" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264211583" />
-    <state width="1877" height="424" key="GridCell.Tab.0.right" timestamp="1588264211584">
+    <state width="1877" height="360" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588265620740" />
+    <state width="1877" height="360" key="GridCell.Tab.0.right" timestamp="1588265620740">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="424" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264211584" />
+    <state width="1877" height="360" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588265620740" />
     <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1588247570409">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -381,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="490" y="195" key="Maven.ArtifactSearchDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586159718762" />
-    <state x="736" y="262" key="RollbackChangesDialog" timestamp="1588261582277">
+    <state x="736" y="262" key="RollbackChangesDialog" timestamp="1588264968142">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="736" y="262" key="RollbackChangesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588261582277" />
+    <state x="736" y="262" key="RollbackChangesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264968142" />
     <state x="461" y="183" key="SettingsEditor" timestamp="1587995604325">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -393,14 +378,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588239737960" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587979745028">
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588264830470">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1587979745028" />
-    <state x="731" y="243" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588263203615">
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264830470" />
+    <state x="731" y="243" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588002751365">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="731" y="243" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588263203615" />
+    <state x="731" y="243" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588002751365" />
     <state x="690" y="306" key="extract.method.dialog" timestamp="1587028679193">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

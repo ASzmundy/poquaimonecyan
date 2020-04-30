@@ -1,6 +1,4 @@
 package implems.sauvegardes;
-
-import exceptions.combat.ExceptionAucunCombatProgramme;
 import exceptions.combat.ExceptionDresseursIdentiques;
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Arbitre;
