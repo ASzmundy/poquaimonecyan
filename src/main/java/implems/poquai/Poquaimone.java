@@ -102,11 +102,6 @@ public class Poquaimone implements Serializable {
 
     @Override
     public String toString() {
-        return " id_dex=" + id_dex +
-                " nom='" + nom + '\'' +
-                ", type='" + type + '\'' +
-                ", pv=" + pv +
-                ", pa=" + pa
-                ;
+        return "nom: "+getNom()+" | type: "+getType()+" | pv="+getPv()+" | pa="+getPa();
     }
 }

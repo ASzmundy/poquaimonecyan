@@ -1,5 +1,6 @@
 package implems;
 
+import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Dresseur;
 import implems.uniques.Liste_Dresseurs;
 import implems.uniques.Poquaidexe;
@@ -17,25 +18,36 @@ public class Liste_DresseursTest {
         Poquaidexe p = new Poquaidexe();
         Liste_Dresseurs ld = new Liste_Dresseurs();
         Dresseur d = new Dresseur("Testman","Test",ld);
-        d.ajouterPoquaimone(4,p);
-        ld.ajouterDresseur(d);
+        try {
+            d.ajouterPoquaimone(4, p);
+        }catch (ExceptionPoquaiIntrouvable e){
+            e.printStackTrace();
+        }
         Iterator<Dresseur> i= ld.liste_dresseurs.iterator();
-        assertNotEquals("Le dresseur doit être dans la liste",false,i.hasNext());
-        assertNotNull("Le dresseur doit avoir un poquaimone",i.next().getEquipe().get(0));
+        assertNotEquals("La liste doit pas être vide",false,i.hasNext());
+        Dresseur dl = i.next();
+        assertEquals("Le dresseur doit être dans la liste",d,dl);
+        assertNotNull("Le dresseur doit avoir un poquaimone",dl.getEquipe().get(0));
     }
 
     @Test
     public void testafficherDresseurs() {
         Liste_Dresseurs ld = new Liste_Dresseurs();
         Poquaidexe p = new Poquaidexe();
-        Dresseur d = new Dresseur("Testman","Test",ld);
-        d.ajouterPoquaimone(4,p);
-        d.ajouterPoquaimone(13,p);
-        d.ajouterPoquaimone(20,p);
-        d = new Dresseur("Jérôman","Jérôme",ld);
-        d.ajouterPoquaimone(1,p);
-        d.ajouterPoquaimone(10,p);
-        d.ajouterPoquaimone(14,p);
+        Dresseur d1 = new Dresseur(ld);
+        Dresseur d2 = new Dresseur("Jérôman","Jérôme",ld);
+        assertNotNull(d1);
+        try {
+            d1.ajouterPoquaimone(4, p);
+            d1.ajouterPoquaimone(13, p);
+            d1.ajouterPoquaimone(20, p);
+
+            d2.ajouterPoquaimone(1, p);
+            d2.ajouterPoquaimone(10, p);
+            d2.ajouterPoquaimone(14, p);
+        }catch (ExceptionPoquaiIntrouvable e){
+            e.printStackTrace();
+        }
         ld.afficherDresseursTrie();
     }
 
@@ -44,8 +56,16 @@ public class Liste_DresseursTest {
         Liste_Dresseurs ld = new Liste_Dresseurs();
         Poquaidexe p = new Poquaidexe();
         Dresseur d = new Dresseur("Kensington", "Charles",ld);
-        d.ajouterPoquaimone(1,p);
-        d.ajouterPoquaimone(11,p);
+        assertNotNull(p.poquaidexe);
+        assertNotNull(d);
+        try {
+            d.ajouterPoquaimone(1, p);
+            d.ajouterPoquaimone(17, p);
+            assertNotNull("le dresseur doit avoir des poquaimones",d.getEquipe().get(0));
+            assertNotNull("le dresseur doit avoir des poquaimones",d.getEquipe().get(1));
+        }catch (ExceptionPoquaiIntrouvable e){
+            e.printStackTrace();
+        }
         ld.afficherDresseursTrie();
         ld.sauvegarderDresseurs();
     }
@@ -56,6 +76,5 @@ public class Liste_DresseursTest {
         ld.chargerDresseurs();
         assertNotNull("Échec du chargement : Liste_Dresseurs = null !",ld.liste_dresseurs);
         ld.afficherDresseursTrie();
-
     }
 }

@@ -26,8 +26,15 @@ public class Liste_Combats implements Serializable{
             combats_programmes.add(a_ajouter);
     }
 
-    public String afficherListe(){
-        return combats_programmes.toString();
+    public void afficherListe(){
+        Logger l = Logger.getLogger("log_liste_combats");
+        String a_afficher="\n";
+        for (Combat combat : combats_programmes) {
+            a_afficher+=combat.nomCombat()+"\n";
+        }
+        if(!a_afficher.equals("\n")) {
+            l.info(a_afficher);
+        }else l.warning("Liste vide");
     }
 
     public void organiserCombat(Dresseur dresseur1, Dresseur dresseur2, Arbitre arbitre) throws ExceptionDresseursIdentiques{

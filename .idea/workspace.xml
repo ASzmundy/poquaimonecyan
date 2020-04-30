@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Modification des packages&#10;Retrait des statics, listes instanciables&#10;Conditions d'évolution déplacées dans evoluer()&#10;Test de la sauvegarde des dresseurs&#10;Et toutes les corrections qui en suit">
-      <change afterPath="$PROJECT_DIR$/dresseurs.dsf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/combat/Peut_Inviter.java" afterDir="false" />
+    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Amélioration de l'affichage de Liste_Dresseurs&#10;Suppression des tests redondants&#10;Nouvelle Exception pour la classe Poquaimone: ExceptionPoquaiIntrouvable&#10;Modifications pour intégrer la nouvelle exception&#10;Ajout du test de sauvegarde en fichier texte&#10;Ajout d'asserts&#10;Quelques peaufinages">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/poquai/ExceptionPoquaiIntrouvable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/implems/FichiertxtTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Arbitre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Arbitre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Attaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/combat/Attaque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Dresseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Dresseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Humain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Humain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Poquaimone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/poquai/Poquaimone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionAmiNonTrouve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/humains/ExceptionAmiNonTrouve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionAucunCombatProgramme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/combat/ExceptionAucunCombatProgramme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionCombatNonTrouve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/combat/ExceptionCombatNonTrouve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionDresseursIdentiques.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/combat/ExceptionDresseursIdentiques.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDArbitre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/combat/ExceptionPasDArbitre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDeDresseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/combat/ExceptionPasDeDresseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exceptions/ExceptionPasDePoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/combat/ExceptionPasDePoque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Peut_Inviter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Statics/Liste_Combats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Combats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Statics/Liste_Dresseurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Dresseurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Statics/Poquaidexe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Poquaidexe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Classes/CombatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/CombatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Classes/DresseurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/DresseurTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Classes/document.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/document.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Statics/Liste_CombatsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/Liste_CombatsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Statics/Liste_DresseursTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/Liste_DresseursTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Statics/PoquaidexeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/PoquaidexeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dresseurs.dsf" beforeDir="false" afterPath="$PROJECT_DIR$/dresseurs.dsf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implems/humains/Dresseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Dresseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implems/poquai/Poquaimone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/poquai/Poquaimone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Combats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Combats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/implems/CombatTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/implems/DresseurTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/implems/Liste_CombatsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/Liste_CombatsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/implems/Liste_DresseursTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/Liste_DresseursTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/implems/PoquaidexeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/PoquaidexeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +41,8 @@
       <list>
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -116,8 +104,8 @@
       <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Liste_DresseursTest.TestChargement">
-    <configuration name="CombatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.implems in Poquaimone">
+    <configuration name="FichiertxtTest.LecturePoquaimoneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
@@ -126,23 +114,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="implems" />
-      <option name="MAIN_CLASS_NAME" value="implems.CombatTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Liste_DresseursTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Poquaimone" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="implems.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="implems" />
-      <option name="MAIN_CLASS_NAME" value="implems.Liste_DresseursTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="implems.FichiertxtTest" />
+      <option name="METHOD_NAME" value="LecturePoquaimoneTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,7 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoquaidexeTest.testPoquaidexe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Liste_DresseursTest.testafficherDresseurs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Poquaimone" />
       <extension name="coverage">
         <pattern>
@@ -188,20 +162,34 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="implems" />
-      <option name="MAIN_CLASS_NAME" value="implems.PoquaidexeTest" />
-      <option name="METHOD_NAME" value="testPoquaidexe" />
+      <option name="MAIN_CLASS_NAME" value="implems.Liste_DresseursTest" />
+      <option name="METHOD_NAME" value="testafficherDresseurs" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="implems in Poquaimone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Poquaimone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="implems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="implems" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.implems in Poquaimone" />
+        <item itemvalue="JUnit.FichiertxtTest.LecturePoquaimoneTest" />
         <item itemvalue="JUnit.Liste_DresseursTest.TestChargement" />
         <item itemvalue="JUnit.Liste_DresseursTest.TestSauvegarde" />
-        <item itemvalue="JUnit.Liste_DresseursTest" />
-        <item itemvalue="JUnit.PoquaidexeTest.testPoquaidexe" />
-        <item itemvalue="JUnit.CombatTest" />
+        <item itemvalue="JUnit.Liste_DresseursTest.testafficherDresseurs" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +227,7 @@
       <workItem from="1587970907178" duration="12995000" />
       <workItem from="1587992569453" duration="10700000" />
       <workItem from="1588155625223" duration="11339000" />
-      <workItem from="1588239653251" duration="6551000" />
+      <workItem from="1588239653251" duration="17800000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de tests + Correctifs + ajouts divers">
       <created>1587979317549</created>
@@ -269,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588167947185</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modification des packages&#10;Retrait des statics, listes instanciables&#10;Conditions d'évolution déplacées dans evoluer()&#10;Test de la sauvegarde des dresseurs&#10;Et toutes les corrections qui en suit">
+      <created>1588248087228</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588248087228</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,10 +307,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="199" key="#Project_Structure/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1585501545091" />
-    <state x="730" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1587030393515">
+    <state x="730" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1588252870776">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="730" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1587030393515" />
+    <state x="730" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588252870776" />
     <state x="628" y="466" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586161194446">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -332,30 +327,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588163890415" />
-    <state x="586" y="60" key="CommitChangelistDialog2" timestamp="1588248009545">
+    <state x="586" y="60" width="997" height="949" key="CommitChangelistDialog2" timestamp="1588259850133">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="586" y="60" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588248009545" />
+    <state x="586" y="60" width="997" height="949" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588259850133" />
     <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1586161207277">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="282" key="FileChooserDialogImpl/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586161207277" />
-    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1588248009611">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1588259855667">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588248009611" />
-    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1588248009610">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588259855667" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center" timestamp="1588259855667">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588248009610" />
-    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1588248009610">
+    <state width="1877" height="266" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588259855667" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left" timestamp="1588259855667">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588248009610" />
-    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1588248009611">
+    <state width="1877" height="266" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588259855667" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right" timestamp="1588259855667">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588248009611" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588259855667" />
     <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1588247570409">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

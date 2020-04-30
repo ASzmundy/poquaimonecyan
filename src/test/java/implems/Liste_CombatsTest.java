@@ -2,6 +2,7 @@ package implems;
 
 import exceptions.combat.ExceptionAucunCombatProgramme;
 import exceptions.combat.ExceptionDresseursIdentiques;
+import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Arbitre;
 import implems.humains.Dresseur;
 import implems.uniques.Liste_Combats;
@@ -19,17 +20,23 @@ public class Liste_CombatsTest {
     public void testListeCombat() { //test des méthodes de Liste_Combat
         Liste_Dresseurs ld = new Liste_Dresseurs();
         Dresseur d1=new Dresseur("Testman","Georges",ld);
-        Poquaidexe p = new Poquaidexe();
-        d1.ajouterPoquaimone(4,p);
-        d1.ajouterPoquaimone(17,p);
-        d1.ajouterPoquaimone(12,p);
         Dresseur d2=new Dresseur("Testwoman","Helena",ld);
-        d2.ajouterPoquaimone(2,p);
-        d2.ajouterPoquaimone(20,p);
-        d2.ajouterPoquaimone(7,p);
         Dresseur d3=new Dresseur("Palareff","Michel",ld);
-        d3.ajouterPoquaimone(8,p);
-        d3.ajouterPoquaimone(18,p);
+        Poquaidexe p = new Poquaidexe();
+        try {
+            d1.ajouterPoquaimone(4, p);
+            d1.ajouterPoquaimone(17, p);
+            d1.ajouterPoquaimone(12, p);
+
+            d2.ajouterPoquaimone(2, p);
+            d2.ajouterPoquaimone(20, p);
+            d2.ajouterPoquaimone(7, p);
+
+            d3.ajouterPoquaimone(8, p);
+            d3.ajouterPoquaimone(18, p);
+        }catch (ExceptionPoquaiIntrouvable e){
+            e.printStackTrace();
+        }
         Arbitre a =new Arbitre("Larbitre","Stéphane");
         Liste_Combats lc = new Liste_Combats();
         try {

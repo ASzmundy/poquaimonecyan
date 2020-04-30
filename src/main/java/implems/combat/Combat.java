@@ -7,7 +7,6 @@ import exceptions.combat.ExceptionPasDePoque;
 import implems.humains.Dresseur;
 import implems.humains.Humain;
 import implems.uniques.Liste_Combats;
-import implems.uniques.Poquaidexe;
 import implems.poquai.Poquaimone;
 import implems.humains.Arbitre;
 
@@ -19,7 +18,6 @@ import java.util.logging.Logger;
 public class Combat {
     private Dresseur dresseur1,dresseur2;
     private Arbitre arbitre;
-    private Dresseur vainqueur,perdant;
     private Set<Humain> spectateurs=new HashSet<>();
 
     public Combat(Dresseur dresseur1,Dresseur dresseur2, Arbitre arbitre, Liste_Combats lc) throws ExceptionDresseursIdentiques {
@@ -55,24 +53,16 @@ public class Combat {
         return arbitre;
     }
 
-    public Dresseur getVainqueur() {
-        return vainqueur;
-    }
-
-    public Dresseur getPerdant() {
-        return perdant;
-    }
-
     public void addSpectateur(Humain nouveau){
         this.spectateurs.add(nouveau);
     }
 
-    @Override
-    public String toString() {
+    public String nomCombat() {
         return dresseur1.getPrenom()+" "+dresseur1.getNom()+" VS "+dresseur2.getPrenom()+" "+dresseur2.getNom();
     }
 
     public void commencerCombat() throws ExceptionPasDeDresseur, ExceptionPasDArbitre, ExceptionPasDePoque {
+        Dresseur vainqueur,perdant;
         if(dresseur1!=null&&this.dresseur2!=null&&this.dresseur1!=this.dresseur2){
             if(arbitre!=null){
                 if(dresseur1.getEquipe().get(0)!=null&&dresseur2.getEquipe().get(0)!=null){

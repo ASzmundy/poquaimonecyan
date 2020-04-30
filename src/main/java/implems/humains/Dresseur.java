@@ -2,6 +2,7 @@ package implems.humains;
 
 import exceptions.humains.ExceptionAmiNonTrouve;
 import exceptions.combat.ExceptionCombatNonTrouve;
+import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.uniques.Liste_Dresseurs;
 import implems.uniques.Poquaidexe;
 import implems.poquai.Poquaimone;
@@ -61,7 +62,7 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         this.nb_defaite++;
     }
 
-    public void ajouterPoquaimone(int id_poque, Poquaidexe px) {
+    public void ajouterPoquaimone(int id_poque, Poquaidexe px) throws ExceptionPoquaiIntrouvable{
         if (px.poquaidexe.get(1) == null) {
             px = new Poquaidexe();
         }
@@ -80,7 +81,11 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
 
     @Override
     public String toString() {
-        return "Nom :" + this.getNom() + " Prénom :" + this.getPrenom() + " Nombre de victoires :" + this.getNb_victoire() + "\n";
+        String str = "Nom: " + this.getNom() + " Prénom: " + this.getPrenom() + " Nombre de victoires: " + this.getNb_victoire() + "\n";
+        for(int i = 0; i<this.equipe.size();i++){
+            str+="\t"+(i+1)+") "+this.equipe.get(i).toString()+"\n";
+        }
+        return str;
     }
 
     @Override
