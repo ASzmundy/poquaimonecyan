@@ -20,16 +20,16 @@ public class MondeTest {
         Dresseur d3=new Dresseur("Palareff","Michel",ld);
         Poquaidexe p = new Poquaidexe();
         try {
-            d1.ajouterPoquaimone(4, p);
-            d1.ajouterPoquaimone(17, p);
-            d1.ajouterPoquaimone(12, p);
+            d1.ajouterPoquaimone(4);
+            d1.ajouterPoquaimone(17);
+            d1.ajouterPoquaimone(12);
 
-            d2.ajouterPoquaimone(2, p);
-            d2.ajouterPoquaimone(20, p);
-            d2.ajouterPoquaimone(7, p);
+            d2.ajouterPoquaimone(2);
+            d2.ajouterPoquaimone(20);
+            d2.ajouterPoquaimone(7);
 
-            d3.ajouterPoquaimone(8, p);
-            d3.ajouterPoquaimone(18, p);
+            d3.ajouterPoquaimone(8);
+            d3.ajouterPoquaimone(18);
         }
         catch (ExceptionPoquaiIntrouvable e){
             e.printStackTrace();

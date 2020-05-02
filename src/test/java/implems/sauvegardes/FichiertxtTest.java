@@ -28,7 +28,7 @@ public class FichiertxtTest {
             String chaine_lue;
             chaine_lue = br.readLine();
             int id_charge = Integer.parseInt(chaine_lue);
-            d1.ajouterPoquaimone(id_charge,p);
+            d1.ajouterPoquaimone(id_charge);
             br.close();
         } catch (IOException | ExceptionPoquaiIntrouvable e){
             e.printStackTrace();

@@ -25,7 +25,7 @@ public class Monde implements Serializable {
     }
 
     public void sauvegarderMonde(String nomdumonde){
-        nomdumonde+=".wsf";//.wsf = World Save File
+        nomdumonde+=".pwsf";//.pwsf = Poquaimone World Save File
         File f = new File(nomdumonde);
         try {
             FileOutputStream fos = new FileOutputStream(f);
@@ -38,7 +38,7 @@ public class Monde implements Serializable {
     }
 
     public static Monde chargerMonde(String nomdumonde){
-        nomdumonde+=".wsf";
+        nomdumonde+=".pwsf";
         File f = new File(nomdumonde);
         try{
             FileInputStream fis = new FileInputStream(f);

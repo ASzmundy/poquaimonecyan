@@ -2,6 +2,8 @@ package implems.uniques;
 
 import implems.humains.Dresseur;
 
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -39,12 +41,9 @@ public class Liste_Dresseurs implements Serializable {
         }else l.warning("Liste vide");
     }
 
-    public void sauvegarderDresseursJSON() {
-
-    }
-
-    public void chargerDresseursJSON() {
-
+    public String sauvegarderDresseursJSON() {
+        Jsonb jsonb = JsonbBuilder.create();
+        return jsonb.toJson(this.liste_dresseurs);
     }
 
 

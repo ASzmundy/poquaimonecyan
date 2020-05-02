@@ -1,12 +1,20 @@
 package implems.humains;
 
+import net.bytebuddy.build.ToStringPlugin;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Humain implements Serializable {
     private String nom,prenom;
+    @Id
     private int id;
+    @Transient
     protected Set<Humain> amis=new HashSet<>();
 
     public Humain(){

@@ -2,11 +2,10 @@ package implems.uniques;
 
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Dresseur;
-import implems.uniques.Liste_Dresseurs;
-import implems.uniques.Poquaidexe;
 import org.junit.Test;
 
 import java.util.Iterator;
+import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
 
@@ -19,7 +18,7 @@ public class Liste_DresseursTest {
         Liste_Dresseurs ld = new Liste_Dresseurs();
         Dresseur d = new Dresseur("Testman","Test",ld);
         try {
-            d.ajouterPoquaimone(4, p);
+            d.ajouterPoquaimone(4);
         }catch (ExceptionPoquaiIntrouvable e){
             e.printStackTrace();
         }
@@ -38,13 +37,13 @@ public class Liste_DresseursTest {
         Dresseur d2 = new Dresseur("Jérôman","Jérôme",ld);
         assertNotNull(d1);
         try {
-            d1.ajouterPoquaimone(4, p);
-            d1.ajouterPoquaimone(13, p);
-            d1.ajouterPoquaimone(20, p);
+            d1.ajouterPoquaimone(4);
+            d1.ajouterPoquaimone(13);
+            d1.ajouterPoquaimone(20);
 
-            d2.ajouterPoquaimone(1, p);
-            d2.ajouterPoquaimone(10, p);
-            d2.ajouterPoquaimone(14, p);
+            d2.ajouterPoquaimone(1);
+            d2.ajouterPoquaimone(10);
+            d2.ajouterPoquaimone(14);
         }catch (ExceptionPoquaiIntrouvable e){
             e.printStackTrace();
         }
@@ -52,12 +51,24 @@ public class Liste_DresseursTest {
     }
 
     @Test
-    public void TestSauvegarde() {
+    public void TestJson() {
+        Liste_Dresseurs ld = new Liste_Dresseurs();
+        Dresseur d1 = new Dresseur(ld);
+        Dresseur d2 = new Dresseur("Jérôman","Jérôme",ld);
+        assertNotNull(d1);
+        try {
+            d1.ajouterPoquaimone(4);
+            d1.ajouterPoquaimone(13);
+            d1.ajouterPoquaimone(20);
 
-    }
-
-    @Test
-    public void TestChargement(){
-
+            d2.ajouterPoquaimone(1);
+            d2.ajouterPoquaimone(10);
+            d2.ajouterPoquaimone(14);
+        }catch (ExceptionPoquaiIntrouvable e){
+            e.printStackTrace();
+        }
+        String json =ld.sauvegarderDresseursJSON();
+        Logger l = Logger.getLogger("Log_json");
+        l.info(json);
     }
 }

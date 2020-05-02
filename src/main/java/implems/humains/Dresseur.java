@@ -11,11 +11,15 @@ import implems.combat.Combat;
 import interfaces.combat.Peut_Inviter;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+@Entity
 public class Dresseur extends Humain implements Peut_Inviter, Serializable {
     private Integer nb_victoire, nb_defaite;
+    @Transient
     private ArrayList<Poquaimone> equipe = new ArrayList<>();
 
     public Dresseur() {
@@ -62,10 +66,9 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         this.nb_defaite++;
     }
 
-    public void ajouterPoquaimone(int id_poque, Poquaidexe px) throws ExceptionPoquaiIntrouvable{
-        if (px.poquaidexe.get(1) == null) {
-            px = new Poquaidexe();
-        }
+    public void ajouterPoquaimone(int id_poque) throws ExceptionPoquaiIntrouvable{
+        Poquaidexe px = new Poquaidexe();
+        if(!px.poquaidexe.containsKey(id_poque)) throw new ExceptionPoquaiIntrouvable();
         if (id_poque != 1) {
             while (px.poquaidexe.get(id_poque - 1).isEvoluable() && id_poque > 2) {
                 id_poque--; //permet de prendre le poque de base si l'id d'une évolution est entrée en paramètre
@@ -74,7 +77,7 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         Poquaimone p = new Poquaimone(
                 id_poque, px.poquaidexe.get(id_poque).getNom(), px.poquaidexe.get(id_poque).getType(), px.poquaidexe.get(id_poque).getDescription(),
                 px.poquaidexe.get(id_poque).isEvoluable(), px.poquaidexe.get(id_poque).getAttaques(), px.poquaidexe.get(id_poque).getPv(),
-                px.poquaidexe.get(id_poque).getPa(),px
+                px.poquaidexe.get(id_poque).getPa()
         );
         this.equipe.add(p);
     }
@@ -101,7 +104,7 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         Poquaimone ancien = this.equipe.get(place_poquai);
         if (ancien != null) { //sécurité si le poquaimone existe bien dans l'équipe
             if (ancien.isEvoluable()) { //sécurité pour voir si il a bien une évolution
-                Poquaidexe px = ancien.getPoquaidexe();
+                Poquaidexe px = new Poquaidexe();
                 if ((px.poquaidexe.get(ancien.getId() + 1).isEvoluable() && this.equipe.get(place_poquai).getPv() >= 50) ||
                         (!(px.poquaidexe.get(ancien.getId() + 1).isEvoluable()) && ancien.getPv() >= 100)) {
                         //si le poquaimone est de base, il a besoin de 50pv pour évoluer, si c'est une évolution évoluable il a besoin de 100
@@ -120,7 +123,7 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
                         }
                         nouveau_attaques[i] = nouvelle_attaque;
                         Poquaimone nouveau = new Poquaimone(nouveau_id, nouveau_nom, nouveau_type, nouvelle_desc,
-                                evoluable, nouveau_attaques, ancien.getPv(), ancien.getPa() + 20, px);
+                                evoluable, nouveau_attaques, ancien.getPv(), ancien.getPa() + 20);
                         this.equipe.remove(place_poquai);
                         this.equipe.add(place_poquai, nouveau);
                     }
@@ -128,4 +131,9 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
             }
         }
     }
+
+    public void EnregistrerBDD(){
+
+    }
+
 }
