@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Poquaimone:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Version InDev 2&#10;Ajout du main&#10;Le projet est défini comme un module java&#10;Ajout de Liste_Arbitres et Liste_Humains, permettant de stocker respectivement les Arbitres et les Humains qui ne sont ni Arbitre ni Dresseur&#10;Modifications dans Monde : attributs private, nouvelles listes et ajout de getters&#10;Correction de la liste par ordre de combats gagnés&#10;Ajout d'un message en cas d'évolution&#10;Correction des attaque d'évolution">
-      <change afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Arbitres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Humains.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/entry_point/Main.java" afterDir="false" />
+    <list default="true" id="2d7ce7dc-7eee-464f-98f4-7be14ee4bd02" name="Default Changelist" comment="Version InDev 2.0.1&#10;Corrections pour conversion en JAR éxécutable">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Poquaimone_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poquaimone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Poquaimone.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mondetest.pwsf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/combat/Combat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/humains/Arbitre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Arbitre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/humains/Dresseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Dresseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/humains/Humain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/humains/Humain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/sauvegardes/Monde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/sauvegardes/Monde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Dresseurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implems/uniques/Liste_Dresseurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/sauvegardes/MondeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/sauvegardes/MondeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implems/uniques/Liste_DresseursTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implems/uniques/Liste_DresseursTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entry_point/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entry_point/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,18 +89,19 @@
       <recent name="Statics" />
       <recent name="Classes" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="classes" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\resources\META-INF" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone" />
-      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\java\A_rendre_1" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="classes" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\resources\META-INF" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone" />
+      <recent name="C:\Users\Alexis\IdeaProjects\Poquaimone\src\main\java\A_rendre_1" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -227,7 +222,7 @@
       <workItem from="1588326056229" duration="761000" />
       <workItem from="1588410217648" duration="7430000" />
       <workItem from="1588417814758" duration="614000" />
-      <workItem from="1588499353710" duration="14380000" />
+      <workItem from="1588499353710" duration="15678000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de tests + Correctifs + ajouts divers">
       <created>1587979317549</created>
@@ -271,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588417662707</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Version InDev 2&#10;Ajout du main&#10;Le projet est défini comme un module java&#10;Ajout de Liste_Arbitres et Liste_Humains, permettant de stocker respectivement les Arbitres et les Humains qui ne sont ni Arbitre ni Dresseur&#10;Modifications dans Monde : attributs private, nouvelles listes et ajout de getters&#10;Correction de la liste par ordre de combats gagnés&#10;Ajout d'un message en cas d'évolution&#10;Correction des attaque d'évolution">
+      <created>1588514349215</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588514349215</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,13 +310,14 @@
     <MESSAGE value="Nouvel exception : ExceptionDresseursIdentiques au cas où un dresseur se combat lui même&#10;Automatisation de l'ajout d'un Dresseur dans Liste_Dresseurs lors de l'instanciation&#10;Idem pour Combat&#10;Modifs sur Liste_Combats ( utilisation de poll )&#10;Développment des tests&#10;Amélioration du listage des combats et des dresseurs (un seul INFO)&#10;Correctifs d'exceptions&#10;Simplifications mineures de code" />
     <MESSAGE value="Modification des packages&#10;Retrait des statics, listes instanciables&#10;Conditions d'évolution déplacées dans evoluer()&#10;Test de la sauvegarde des dresseurs&#10;Et toutes les corrections qui en suit" />
     <MESSAGE value="Liste_Dresseurs peut être converti en JSON&#10;Le poquaidexe est maintenant instancié que si c'est nécessaire et n'est plus stocké dans un Poquaimone&#10;Les Dresseurs peuvent être mis dans une BDD sans leur équipe (merci @Transcient)&#10;Le monde est désormais enregistré en .pwsf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Liste_Dresseurs peut être converti en JSON&#10;Le poquaidexe est maintenant instancié que si c'est nécessaire et n'est plus stocké dans un Poquaimone&#10;Les Dresseurs peuvent être mis dans une BDD sans leur équipe (merci @Transcient)&#10;Le monde est désormais enregistré en .pwsf" />
+    <MESSAGE value="Version InDev 2&#10;Ajout du main&#10;Le projet est défini comme un module java&#10;Ajout de Liste_Arbitres et Liste_Humains, permettant de stocker respectivement les Arbitres et les Humains qui ne sont ni Arbitre ni Dresseur&#10;Modifications dans Monde : attributs private, nouvelles listes et ajout de getters&#10;Correction de la liste par ordre de combats gagnés&#10;Ajout d'un message en cas d'évolution&#10;Correction des attaque d'évolution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version InDev 2&#10;Ajout du main&#10;Le projet est défini comme un module java&#10;Ajout de Liste_Arbitres et Liste_Humains, permettant de stocker respectivement les Arbitres et les Humains qui ne sont ni Arbitre ni Dresseur&#10;Modifications dans Monde : attributs private, nouvelles listes et ajout de getters&#10;Correction de la liste par ordre de combats gagnés&#10;Ajout d'un message en cas d'évolution&#10;Correction des attaque d'évolution" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1197" y="207" key="#Project_Structure" timestamp="1588500609225">
+    <state x="-1197" y="207" key="#Project_Structure" timestamp="1588514733917">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state x="-1197" y="207" key="#Project_Structure/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588500609225" />
+    <state x="-1197" y="207" key="#Project_Structure/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514733917" />
     <state x="552" y="199" key="#Project_Structure/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1585501545091" />
     <state x="709" y="377" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1588499764154">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -324,14 +327,23 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="730" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588252870776" />
-    <state x="628" y="466" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586161194446">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="-1059" y="332" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588514711030">
+      <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
+    <state x="-1059" y="332" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514711030" />
+    <state x="-1130" y="457" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588515050730">
+      <screen x="-1680" y="21" width="1680" height="1010" />
+    </state>
+    <state x="-1130" y="457" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515050730" />
     <state x="628" y="466" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1586161194446" />
     <state x="756" y="400" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588239949974">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="400" width="408" height="289" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588239949974" />
+    <state x="-1044" y="407" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1588515054579">
+      <screen x="-1680" y="21" width="1680" height="1010" />
+    </state>
+    <state x="-1044" y="407" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515054579" />
     <state x="673" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588243124955">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -340,54 +352,59 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588163890415" />
-    <state x="-1361" y="81" width="997" height="949" key="CommitChangelistDialog2" timestamp="1588514206510">
+    <state x="-1361" y="81" width="997" height="949" key="CommitChangelistDialog2" timestamp="1588515096382">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state x="-1361" y="81" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514206510" />
+    <state x="-1361" y="81" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515096382" />
     <state x="587" y="108" width="997" height="949" key="CommitChangelistDialog2/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588512973051" />
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1588264981911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264981911" />
-    <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1588499773288">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="-1032" y="285" key="FileChooserDialogImpl" timestamp="1588514664253">
+      <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
+    <state x="-1032" y="285" key="FileChooserDialogImpl/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514664253" />
     <state x="740" y="282" key="FileChooserDialogImpl/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588499773288" />
-    <state width="1637" height="168" key="GridCell.Tab.0.bottom" timestamp="1588514206583">
+    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1588515419586">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state width="1637" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514206583" />
+    <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419586" />
     <state width="1877" height="146" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513373447" />
-    <state width="1637" height="168" key="GridCell.Tab.0.center" timestamp="1588514206583">
+    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1588515419586">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state width="1637" height="168" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514206583" />
+    <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419586" />
     <state width="1877" height="146" key="GridCell.Tab.0.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513373447" />
-    <state width="1637" height="168" key="GridCell.Tab.0.left" timestamp="1588514206582">
+    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1588515419586">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state width="1637" height="168" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514206582" />
+    <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419586" />
     <state width="1877" height="146" key="GridCell.Tab.0.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513373447" />
-    <state width="1637" height="168" key="GridCell.Tab.0.right" timestamp="1588514206583">
+    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1588515419586">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state width="1637" height="168" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514206583" />
+    <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419586" />
     <state width="1877" height="146" key="GridCell.Tab.0.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513373447" />
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1588513258864">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1588515419587">
+      <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419587" />
     <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513258864" />
-    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1588513258864">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1588515419587">
+      <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419587" />
     <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513258864" />
-    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1588513258864">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1588515419586">
+      <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419586" />
     <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513258864" />
-    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1588513258864">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1588515419587">
+      <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588515419587" />
     <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588513258864" />
     <state x="490" y="195" key="Maven.ArtifactSearchDialog" timestamp="1586159718762">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -397,15 +414,15 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="736" y="262" key="RollbackChangesDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588264968142" />
-    <state x="-1277" y="181" key="SettingsEditor" timestamp="1588514184855">
+    <state x="-1343" y="123" key="SettingsEditor" timestamp="1588514973172">
       <screen x="-1680" y="21" width="1680" height="1010" />
     </state>
-    <state x="-1277" y="181" key="SettingsEditor/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514184855" />
+    <state x="-1343" y="123" key="SettingsEditor/0.0.1920.1080/-1680.21.1680.1010@-1680.21.1680.1010" timestamp="1588514973172" />
     <state x="461" y="183" key="SettingsEditor/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588500907181" />
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1588499353110">
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1588517360145">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588499353110" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588517360145" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588264830470">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -430,16 +447,5 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/-1680.21.1680.1010@0.0.1920.1080" timestamp="1588501751952" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/entry_point/Main.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
