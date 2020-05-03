@@ -15,9 +15,10 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 @Entity
-public class Dresseur extends Humain implements Peut_Inviter, Serializable {
+public class Dresseur extends Humain implements Peut_Inviter, Serializable, Comparable<Dresseur> {
     private Integer nb_victoire, nb_defaite;
     @Transient
     private ArrayList<Poquaimone> equipe = new ArrayList<>();
@@ -100,6 +101,11 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
         } else throw new ExceptionCombatNonTrouve();
     }
 
+    @Override
+    public int compareTo(Dresseur dresseur) {
+        return dresseur.nb_victoire-this.nb_victoire;
+    }
+
     public void evoluer(int place_poquai) {
         Poquaimone ancien = this.equipe.get(place_poquai);
         if (ancien != null) { //sécurité si le poquaimone existe bien dans l'équipe
@@ -126,14 +132,12 @@ public class Dresseur extends Humain implements Peut_Inviter, Serializable {
                                 evoluable, nouveau_attaques, ancien.getPv(), ancien.getPa() + 20);
                         this.equipe.remove(place_poquai);
                         this.equipe.add(place_poquai, nouveau);
+                        Logger l = Logger.getLogger("évolution");
+                        l.info(ancien.getNom()+" a évolué en "+nouveau.getNom()+" !");
                     }
                 }
             }
         }
-    }
-
-    public void EnregistrerBDD(){
-
     }
 
 }

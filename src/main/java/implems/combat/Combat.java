@@ -68,8 +68,8 @@ public class Combat implements Serializable {
             if(arbitre!=null){
                 if(dresseur1.getEquipe().get(0)!=null&&dresseur2.getEquipe().get(0)!=null){
                     Random random = new Random();
-                    int num_poque1 = random.nextInt(dresseur1.getEquipe().size()); // selectionne la place du premier poquemone choisi au hasard
-                    int num_poque2 = random.nextInt(dresseur2.getEquipe().size()); // selectionne la place du second poquemone choisi au hasard
+                    int num_poque1 = random.nextInt(dresseur1.getEquipe().size()); // selectionne la place du premier poquaimone choisi au hasard
+                    int num_poque2 = random.nextInt(dresseur2.getEquipe().size()); // selectionne la place du second poquaimone choisi au hasard
                     Poquaimone poque1 = dresseur1.getEquipe().get(num_poque1);
                     Poquaimone poque2 = dresseur2.getEquipe().get(num_poque2);
                     Logger l = Logger.getLogger("Log_combat");
@@ -84,7 +84,7 @@ public class Combat implements Serializable {
                         i++;
                     }
                     i = 0;
-                    while (poque1.getAttaques()[i] != null && i <= 2) {
+                    while (poque2.getAttaques()[i] != null && i <= 2) {
                         l.info(poque2.getNom() + " utilise " + poque2.getAttaques()[i].getNom_attaque()+"\n\t"+poque2.getAttaques()[i].getCri_attaque());
                         i++;
                     }

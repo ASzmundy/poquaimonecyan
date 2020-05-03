@@ -46,7 +46,7 @@ public class MondeTest {
         }catch (ExceptionDresseursIdentiques e){
             e.printStackTrace();
         }
-        Monde m = new Monde(lc,ld,p);
+        Monde m = new Monde(lc,ld);
         m.sauvegarderMonde("mondetest");
         }
 
@@ -55,9 +55,9 @@ public class MondeTest {
     public void chargerMonde() {
         Monde m=Monde.chargerMonde("mondetest");
         assertNotNull("Monde chargé incorrectement",m);
-        assertNotNull("Liste combat chargé incorrectement",m.liste_combats);
-        assertNotNull("Liste dresseurs chargé incorrectement",m.liste_dresseurs);
-        m.liste_dresseurs.afficherDresseursTrie();
-        m.liste_combats.afficherListe();
+        assertNotNull("Liste combat chargé incorrectement",m.getListe_combats());
+        assertNotNull("Liste dresseurs chargé incorrectement",m.getListe_dresseurs());
+        m.getListe_dresseurs().afficherDresseursTrie();
+        m.getListe_combats().afficherListe();
     }
 }

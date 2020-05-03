@@ -1,6 +1,7 @@
 package implems.humains;
 
-import net.bytebuddy.build.ToStringPlugin;
+import implems.uniques.Liste_Arbitres;
+import implems.uniques.Liste_Humains;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,10 +23,17 @@ public class Humain implements Serializable {
         prenom="Inconnu";
         Set<Humain> amis = new HashSet<>();
     }
+
     public Humain(String nom, String prenom){
         this.nom=nom;
         this.prenom=prenom;
         Set<Humain> amis = new HashSet<>();
+    }
+    public Humain(String nom, String prenom, Liste_Humains lh){
+        this.nom=nom;
+        this.prenom=prenom;
+        Set<Humain> amis = new HashSet<>();
+        lh.ajouterHumain(this);
     }
 
     public String getNom() {

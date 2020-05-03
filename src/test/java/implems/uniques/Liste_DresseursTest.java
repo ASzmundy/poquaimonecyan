@@ -1,6 +1,9 @@
 package implems.uniques;
 
+import exceptions.combat.ExceptionAucunCombatProgramme;
+import exceptions.combat.ExceptionDresseursIdentiques;
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
+import implems.humains.Arbitre;
 import implems.humains.Dresseur;
 import org.junit.Test;
 
@@ -32,9 +35,10 @@ public class Liste_DresseursTest {
     @Test
     public void testafficherDresseurs() {
         Liste_Dresseurs ld = new Liste_Dresseurs();
-        Poquaidexe p = new Poquaidexe();
+        Liste_Combats lc = new Liste_Combats();
         Dresseur d1 = new Dresseur(ld);
         Dresseur d2 = new Dresseur("Jérôman","Jérôme",ld);
+        Arbitre a = new Arbitre("arbitre","arbitre");
         assertNotNull(d1);
         try {
             d1.ajouterPoquaimone(4);
@@ -45,6 +49,17 @@ public class Liste_DresseursTest {
             d2.ajouterPoquaimone(10);
             d2.ajouterPoquaimone(14);
         }catch (ExceptionPoquaiIntrouvable e){
+            e.printStackTrace();
+        }
+        try {
+            lc.organiserCombat(d1,d2,a);
+        }catch (ExceptionDresseursIdentiques e){
+            e.printStackTrace();
+        }
+        ld.afficherDresseursTrie();
+        try {
+            lc.lancerCombat();
+        }catch (ExceptionAucunCombatProgramme e){
             e.printStackTrace();
         }
         ld.afficherDresseursTrie();

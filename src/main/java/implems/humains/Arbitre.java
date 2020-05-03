@@ -3,6 +3,7 @@ package implems.humains;
 import exceptions.humains.ExceptionAmiNonTrouve;
 import exceptions.combat.ExceptionCombatNonTrouve;
 import implems.combat.Combat;
+import implems.uniques.Liste_Arbitres;
 import interfaces.combat.Peut_Inviter;
 
 public class Arbitre extends Humain implements Peut_Inviter {
@@ -16,6 +17,12 @@ public class Arbitre extends Humain implements Peut_Inviter {
     public Arbitre(String nom, String prenom) {
         super(nom, prenom);
         nb_combats_arbitres = 0;
+    }
+
+    public Arbitre(String nom, String prenom, Liste_Arbitres la) {
+        super(nom, prenom);
+        nb_combats_arbitres = 0;
+        la.ajouterArbitre(this);
     }
 
     public int getNb_combats_arbitres() {
