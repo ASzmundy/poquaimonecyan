@@ -7,10 +7,10 @@ import implems.humains.Arbitre;
 import implems.humains.Dresseur;
 import implems.humains.Humain;
 import implems.sauvegardes.Monde;
-import implems.uniques.Liste_Arbitres;
-import implems.uniques.Liste_Combats;
-import implems.uniques.Liste_Dresseurs;
-import implems.uniques.Liste_Humains;
+import implems.listes.Liste_Arbitres;
+import implems.listes.Liste_Combats;
+import implems.listes.Liste_Dresseurs;
+import implems.listes.Liste_Humains;
 
 import java.util.Iterator;
 import java.util.Scanner;

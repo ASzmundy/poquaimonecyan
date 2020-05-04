@@ -1,7 +1,9 @@
 package implems.sauvegardes;
 
-import implems.uniques.Liste_Combats;
-import implems.uniques.Liste_Dresseurs;
+import implems.listes.Liste_Arbitres;
+import implems.listes.Liste_Combats;
+import implems.listes.Liste_Dresseurs;
+import implems.listes.Liste_Humains;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,6 +16,8 @@ import java.io.Serializable;
 public class Monde implements Serializable {
     private Liste_Combats liste_combats;
     private Liste_Dresseurs liste_dresseurs;
+    private Liste_Arbitres liste_arbitres;
+    private Liste_Humains liste_humains;
 
 
     public Monde(Liste_Combats lc, Liste_Dresseurs ld) {
@@ -27,6 +31,14 @@ public class Monde implements Serializable {
 
     public Liste_Dresseurs getListe_dresseurs() {
         return liste_dresseurs;
+    }
+
+    public Liste_Arbitres getListe_arbitres() {
+        return liste_arbitres;
+    }
+
+    public Liste_Humains getListe_humains() {
+        return liste_humains;
     }
 
     public void sauvegarderMonde(String nomdumonde){

@@ -1,4 +1,4 @@
-package implems.uniques;
+package implems.listes;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

@@ -1,13 +1,10 @@
-package implems.uniques;
+package implems.listes;
 
 import exceptions.combat.ExceptionAucunCombatProgramme;
 import exceptions.combat.ExceptionDresseursIdentiques;
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Arbitre;
 import implems.humains.Dresseur;
-import implems.uniques.Liste_Combats;
-import implems.uniques.Liste_Dresseurs;
-import implems.uniques.Poquaidexe;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

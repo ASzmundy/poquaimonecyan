@@ -1,4 +1,4 @@
-package implems.uniques;
+package implems.listes;
 
 import exceptions.combat.ExceptionAucunCombatProgramme;
 import exceptions.combat.ExceptionDresseursIdentiques;

@@ -6,7 +6,7 @@ import exceptions.combat.ExceptionPasDeDresseur;
 import exceptions.combat.ExceptionPasDePoque;
 import implems.humains.Dresseur;
 import implems.humains.Humain;
-import implems.uniques.Liste_Combats;
+import implems.listes.Liste_Combats;
 import implems.poquai.Poquaimone;
 import implems.humains.Arbitre;
 

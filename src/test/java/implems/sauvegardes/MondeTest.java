@@ -3,9 +3,9 @@ import exceptions.combat.ExceptionDresseursIdentiques;
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Arbitre;
 import implems.humains.Dresseur;
-import implems.uniques.Liste_Combats;
-import implems.uniques.Liste_Dresseurs;
-import implems.uniques.Poquaidexe;
+import implems.listes.Liste_Combats;
+import implems.listes.Liste_Dresseurs;
+import implems.listes.Poquaidexe;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

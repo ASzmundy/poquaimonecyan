@@ -1,7 +1,6 @@
 package implems.humains;
 
-import implems.uniques.Liste_Arbitres;
-import implems.uniques.Liste_Humains;
+import implems.listes.Liste_Humains;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

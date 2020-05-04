@@ -1,7 +1,6 @@
 package implems.poquai;
 
 import implems.combat.Attaque;
-import implems.uniques.Poquaidexe;
 
 import java.io.Serializable;
 

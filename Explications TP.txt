@@ -1,0 +1,103 @@
+TP POO 2020
+Alexis Szmundy
+_______________________
+
+Les packages :
+
+-Le package entry_point contient le main du projet qui lui-même pourra être compressé dans un jar exécutable 
+( retiré du rendu car sinon ça dépassait la taille limite de 10 mo, le jar pèse 16-17mo )
+
+-Le package exceptions contient les différentes exceptions qui pourront être lancés dans le programme
+
+-Le package interfaces contient un seul sous-package, comme il y a qu'une interface
+
+-Le package bdd, exclusif aux tests, contient le test pour la base de données
+
+-Enfin, le package implems contient toutes les classes d'objets du programme
+
+
+Les sous-packages :
+
+Excepté pour entry_point, chaque package dans main contient au moins un sous-package, les différents sous-packages sont :
+
+-combat : tout ce qui est en rapport avec les combats ( ici la classe Attaque et Combat )
+
+-humains : la classe Humain et ses héritières : Arbitre et Dresseur
+
+-poquai : pour tout ce qui touche au poquaimones, pour l'instant seule la classe Poquaimone est concernée
+
+-sauvegardes : pour gérer la sauvegarde et la persistance du monde
+
+-listes : pour les listes de telle ou telle classe
+
+
+Les classes :
+
+-entry_point.
+	Main : Le main du programme, contient un menu qui sert d'interface utilisateur pour l'exécutable
+
+-exceptions.
+	-combat.
+		ExceptionAucunCombatProgramme: Se lève quand on poll une Liste_Combats vide
+		ExceptionCombatNonTrouve: Se déclenche quand on veut commencer un combat introuvable
+		ExceptionDresseursIdentiques: Se lève quand on veut faire combattre un dresseur face à lui même
+		ExceptionPasDArbitre: Quand un combat ne possède pas d'arbitre
+		ExceptionPasDeDresseur: Quand un combat ne possède pas assez de Dresseur
+		ExceptionPasDePoque: Quand un des 2 dresseurs d'un combat ne possède aucun poquaimone
+	
+	-humains.
+		ExceptionAmiNonTrouve : Se lève quand on invite un Humain n'étant pas dans la liste d'amis
+		
+	-poquai.
+		ExceptionPoquaiIntrouvable: Se déclenche quand on veut instancier un poquaimone n'étant pas dans le poquaidexe
+
+-implems.
+	-combat.
+		Attaque : Modélise une attaque de poquaimone, avec son cri et son nom
+		Combat : Modélise un combat de Poquaimones, avec les dresseurs, les spectateurs et l'arbitre
+
+	-humains.
+		Humain : Modélise un humain standard, avec son nom et son prénom
+		Arbitre : Modélise un arbitre de combats poquaimones, hérite de la classe Humain
+		Dresseur : Modélise un dresseur de poquaimones, hérite aussi de la classe Humain
+
+	-listes.
+		Liste_Combats : Liste les combats prévus
+		Liste_Dresseurs : Liste des dresseurs
+		Liste_Arbitres : Liste les arbitres de ce monde, sert surtout pour la sauvegarde
+		Liste_Humains : Liste les humains qui sont ni Arbitre, ni Dresseur, sert aussi pour la sauvegarde
+		Poquaidexe : Un poquaidexe, la liste prédifinie des poquaimones pouvant être créés dans ce programme
+
+	-poquai.
+		Poquaimone : Modélise un poquaimone, avec un nom,type,description,attaques,etc...
+
+	-sauvegardes.
+		Monde: Modélise un monde pouvant être chargé et sauvegardé dans un fichier .pwsf, Poquaimone World Save File
+
+
+Les tests :
+
+Le TP contient 8 tests :
+
+-TestBDD : situé dans le package bdd, il permet de tester la connection à la base de données hdsqldb spécifié dans le persistence.xml
+
+-Liste_CombatsTest : pour tester le bon fonctionnement Liste_Combats
+
+-Liste_DresseursTest : idem mais pour Liste_Dresseurs
+	qui lui Contient 3 tests :
+	- testAjouterDresseur() pour s'assurer qu'un dresseur et son équipe entre bien dans la liste
+	- testafficherDresseurs() pour vérifier le bon affichage de la liste dans l'ordre du nombre de victoires
+	- TestJson() pour voir la conversion de la liste en JSON
+
+-PoquaidexeTest : Pour s'assurer que le poquaidexe s'instancie bien
+
+-FichiertxtTest : Teste la lecture d'un fichier txt pour instancier un poquaimone
+
+-MondeTest : Teste les méthodes de sauvegarde d'un Monde
+
+
+Les fichiers possibles :
+
+-[nom du monde].pwsf : Une sauvegarde d'un monde
+
+-test.txt : à utiliser pour FichiertxtTest (voir au dessus), il faut juste écrire l'id poquaidexe du poquaimone qu'on veut instancier

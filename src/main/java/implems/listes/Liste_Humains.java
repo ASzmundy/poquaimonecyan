@@ -1,4 +1,4 @@
-package implems.uniques;
+package implems.listes;
 
 import implems.humains.Humain;
 

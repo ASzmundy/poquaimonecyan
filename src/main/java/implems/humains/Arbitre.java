@@ -3,7 +3,7 @@ package implems.humains;
 import exceptions.humains.ExceptionAmiNonTrouve;
 import exceptions.combat.ExceptionCombatNonTrouve;
 import implems.combat.Combat;
-import implems.uniques.Liste_Arbitres;
+import implems.listes.Liste_Arbitres;
 import interfaces.combat.Peut_Inviter;
 
 public class Arbitre extends Humain implements Peut_Inviter {

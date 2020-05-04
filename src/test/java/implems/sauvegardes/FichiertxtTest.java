@@ -2,8 +2,8 @@ package implems.sauvegardes;
 
 import exceptions.poquai.ExceptionPoquaiIntrouvable;
 import implems.humains.Dresseur;
-import implems.uniques.Liste_Dresseurs;
-import implems.uniques.Poquaidexe;
+import implems.listes.Liste_Dresseurs;
+import implems.listes.Poquaidexe;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -37,9 +37,4 @@ public class FichiertxtTest {
         ld.afficherDresseursTrie();
     }
 
-
-    @Test
-    public void LectureTest(){
-
-    }
 }

@@ -1,7 +1,7 @@
 package bdd;
 
 import implems.humains.Dresseur;
-import implems.uniques.Liste_Dresseurs;
+import implems.listes.Liste_Dresseurs;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
